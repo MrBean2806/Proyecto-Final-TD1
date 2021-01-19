@@ -3,7 +3,8 @@ module Drv_teclado(
 	input [3:0] fila,
 	output reg [3:0] col = 4'b0001,
 	output reg [4:0] digito,
-	output reg cambio_digito;
+	output reg [1:0] desp = 0
+	//output reg cambio_digito;
 );
 
 reg [4:0] aux = 5'b10000;
@@ -12,12 +13,12 @@ reg [3:0] counter = 0;
 always @(posedge clk) begin
 	if(fila == 4'd0) begin
 		digito <= digito;
-		cambio_digito <= cambio_digito;
 	end
 	else	begin
+		if(desp == 2'b10)
+			desp <= 0;
+		else desp <= desp + 1;
 		digito <= aux;
-		//cambio_digito <= cambio_digito + 2'd1;
-		cambio_digito <= !cambio_digito;
 	end
 	//shift aritmetico
 	col <= col <<< 1;
