@@ -1,4 +1,4 @@
-module Drv_teclado(
+module Driver_teclado(
 	input clk,		//clk de 100Hz
 	input [3:0] fila,
 	output reg [3:0] col = 4'b0001,
@@ -14,9 +14,8 @@ always @(posedge clk) begin
 		digito <= digito;
 		cambio_digito <= cambio_digito;
 	end
-	else	begin
+	else begin
 		digito <= aux;
-		//cambio_digito <= cambio_digito + 2'd1;
 		cambio_digito <= !cambio_digito;
 	end
 	//shift aritmetico
