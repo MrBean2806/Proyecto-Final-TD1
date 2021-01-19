@@ -17,11 +17,18 @@ always @(posedge clk) begin
 	else	begin
 		if(desp == 2'b10)
 			desp <= 0;
-		else desp <= desp + 1;
+		else 
+			desp <= desp + 1;
+		
 		digito <= aux;
 	end
 	//shift aritmetico
-	col <= col <<< 1;
+	begin
+		col <= col <<< 1;
+		if(col == 4'b1000)
+			col <= 4'b0001;
+	end
+
 end
 
 always @(fila, col, digito, aux) begin
