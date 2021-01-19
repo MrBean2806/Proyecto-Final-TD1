@@ -18,8 +18,9 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
+
 //Recibe los digitos ingresados por teclado y los junta en un numero de 3 digitos
-module cdu(
+module Memoria_RGB(
 	input clk,
 	input [4:0] digito,
 	input [1:0] desp,
