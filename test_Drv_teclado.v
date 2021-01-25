@@ -49,14 +49,26 @@ module test_Drv_teclado;
 		
 		// Wait 100 ns for global reset to finish
 		#100;      
-		fila = 4'b0100;
-		#10
-		fila = 4'b0;
-		#40
+
+		
 		fila = 4'b0001;
 		#10
 		fila = 4'b0;
 		
+		#40
+		fila = 4'b0010;
+		#10
+		fila = 4'b0;
+		
+		#40
+		fila = 4'b0100;
+		#10
+		fila = 4'b0;
+		
+		#40
+		fila = 4'b1000;
+		#10
+		fila = 4'b0;
 		// Add stimulus here
 
 	end
