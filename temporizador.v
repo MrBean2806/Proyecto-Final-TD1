@@ -6,11 +6,11 @@ module temporizador (
 );
 parameter ciclos_max = 500_000; //ciclos
 reg [4:0] ciclos_R, ciclos_G, ciclos_B;
-reg [31:0] contador = 0;
+reg [31:0] contador_R, contador_G, contador_B = 0;
 reg start = 0;
 
 always @(posedge clk) begin
-    if(B != 5'd16)  begin
+    if(B != 5'd16 )  begin       //Si ya pasaron los estados de lectura
         ciclos_R <= ciclos_max*R/15;
         ciclos_G <= ciclos_max*G/15;
         ciclos_B <= ciclos_max*B/15;
@@ -22,33 +22,39 @@ always @(posedge clk) begin
         start <= 1;
     else 
         start <= start;
-
 end
 
 always @(posedge clk) begin
-    if(start) 
-        contador <= contador + 1;
-    else contador <= 0;
+    if(start) begin
+        contador_R <= contador_R + 1;
+        contador_G <= contador_G + 1;
+        contador_B <= contador_B + 1;
+    end
+    else begin
+        contador_R <= 0;
+        contador_G <= 0;
+        contador_B <= 0;
+    end  
 
-    if((contador >= ciclos_R) && (contador >= ciclos_R) && (contador >= ciclos_R))
-        contador <= 0;
-
+    if(contador_R > ciclos_R) begin
+        contador_R <= 0;
+        start <= 0;
+    end
+    if(contador_G > ciclos_G) begin
+        contador_G <= 0;
+        start <= 0;
+    end
+    if(contador_B > ciclos_B) begin
+        contador_B <= 0;
+        start <= 0;
+    end
 end
 
-assign flag_R = (contador < ciclos_R);
-assign flag_G = (contador < ciclos_G);
-assign flag_B = (contador < ciclos_B);
-/*
-always @(posedge clk) begin
-    contador <= contador + 1;
-    if((contador >= ciclos_R) && (contador >= ciclos_R) && (contador >= ciclos_R))
-        contador <= 0;
-end
-
-assign motor_R = (contador < ciclos_R);
-assign motor_G = (contador < ciclos_G);
-assign motor_B = (contador < ciclos_B);
-*/
+//Se activa la bandera cuando paso el tiempo de prendido de cada motor
+//Duran un ciclo de clk en 1, despues los ifs de arriba resetean los contadores
+assign flag_R = (contador_R >= ciclos_R);
+assign flag_G = (contador_G >= ciclos_G);
+assign flag_B = (contador_B >= ciclos_B);
 
 
 endmodule
