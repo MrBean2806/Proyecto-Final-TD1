@@ -2,7 +2,7 @@ module Drv_teclado(
 	input clk,		//clk de 100Hz
 	input [3:0] fila,
 	output reg [3:0] col = 4'b0001,
-	output reg [4:0] digito,
+	output reg [4:0] digito = 0,
 	output reg [1:0] desp = 0
 	//output reg cambio_digito;
 );
