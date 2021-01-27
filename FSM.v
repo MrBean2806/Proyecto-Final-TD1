@@ -1,16 +1,18 @@
 module FSM(
     input clk,
     input reset,
-    input [4:0] digito,
+    //input [4:0] digito,
+    input flag_R, flag_B, flag_G,
     input cambio,
     input enter,
-    output reg [14:0] RYB,
+    //output reg [14:0] RGB,
     output reg [2:0] Motores
 )
     parameter lectura_R = 3'b0, lectura_Y = 3'b001, lectura_B = 3'b010,
               carga_R = 3'b011, carga_Y = 3'b100, carga_B = 3'b101, espera = 3'b110;
     reg [2:0] estado, estado_pos;
-    reg [32:0] t_R, t_Y, t_B;
+    //reg [32:0] t_R, t_Y, t_B;
+    
 
     always @ (posedge clk or negedge rst) begin
         if( !rst )
@@ -39,13 +41,13 @@ module FSM(
         case (estado)
             // 5'd16 -> display en blanco
             // 5'd17 -> guion
-            lectura_R:  begin   Motores = 3'b000;   RYB =  15'b10000_10000_10000;   end
-            lectura_Y:  begin Motores = 3'b000;   RYB = {digito, RYB[9:0]}; end
-            lectura_B:  begin Motores = 3'b000; RYB = {RYB[14:10], digito, RYB[4:0]};    end
-            espera:     begin Motores = 3'b000; RYB = {RYB[14:5], digito};    end
-            carga_R:    begin Motores = 3'b100; RYB = {5'd17, 5'd16, 5'd16};   end
-            carga_Y:    begin Motores = 3'b010; RYB = {5'd16, 5'd17, 5'd16};    end
-            carga_B:    begin Motores = 3'b001; RYB = {5'd16, 5'd16, 5'd17};    end
+            lectura_R:  begin   Motores = 3'b000;   RGB =  15'b10000_10000_10000;   end
+            lectura_Y:  begin Motores = 3'b000;   RGB = {digito, RGB[9:0]}; end
+            lectura_B:  begin Motores = 3'b000; RGB = {RGB[14:10], digito, RGB[4:0]};    end
+            espera:     begin Motores = 3'b000; RGB = {RGB[14:5], digito};    end
+            carga_R:    begin Motores = 3'b100; RGB = {5'd17, 5'd16, 5'd16};   end
+            carga_Y:    begin Motores = 3'b010; RGB = {5'd16, 5'd17, 5'd16};    end
+            carga_B:    begin Motores = 3'b001; RGB = {5'd16, 5'd16, 5'd17};    end
             default: 
         endcase
         
