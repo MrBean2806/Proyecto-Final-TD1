@@ -6,8 +6,8 @@ module temporizador (
 );
 parameter ciclos_max = 500_000; //ciclos
 reg [4:0] ciclos_R, ciclos_G, ciclos_B;
-reg [31:0] contador_R, contador_G, contador_B = 0;
-reg start = 0;
+reg [31:0] contador = 0;
+reg [2:0] RBG_count = 0;       //indica que color se esta cargando
 
 always @(posedge clk) begin
     if(B != 5'd16 )  begin       //Si ya pasaron los estados de lectura
@@ -16,7 +16,7 @@ always @(posedge clk) begin
         ciclos_B <= ciclos_max*B/15;
     end
 end
-//Empieza a contar si se apreto el enter
+
 always @(posedge clk) begin
     if(enter)
         start <= 1;
@@ -25,30 +25,34 @@ always @(posedge clk) begin
 end
 
 always @(posedge clk) begin
-    if(start) begin
-        contador_R <= contador_R + 1;
-        contador_G <= contador_G + 1;
-        contador_B <= contador_B + 1;
-    end
-    else begin
-        contador_R <= 0;
-        contador_G <= 0;
-        contador_B <= 0;
-    end  
-
-    if(contador_R > ciclos_R) begin
-        contador_R <= 0;
-        start <= 0;
-    end
-    if(contador_G > ciclos_G) begin
-        contador_G <= 0;
-        start <= 0;
-    end
-    if(contador_B > ciclos_B) begin
-        contador_B <= 0;
-        start <= 0;
-    end
+    case (RGB_count)
+        3'b001: begin
+						 if(start)   contador <= contador + 1;
+						 else contador <= contador; //=0
+						 if(contador > ciclos_R) begin
+							 RBG_count <= 3'b010;
+							 contador <= 0;
+							end
+					 end
+        3'b010: if(contador > ciclos_G) begin
+                    RBG_count <= 3'b100;
+                    contador <= 0;
+                  end
+                else contador <= contador + 1;
+        3'b100: if(contador > ciclos_B) begin
+                    start <= 0;
+                    RBG_count <= 3'b001;
+                    contador <= 0;
+                end
+                else contador <= contador + 1;
+        default:  begin
+                    start <= 0;
+                    RBG_count <= 3'b001;
+                    contador <= 0;
+                  end  
+    endcase
 end
+
 
 //Se activa la bandera cuando paso el tiempo de prendido de cada motor
 //Duran un ciclo de clk en 1, despues los ifs de arriba resetean los contadores
