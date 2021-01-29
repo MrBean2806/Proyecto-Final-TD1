@@ -6,17 +6,20 @@
 );
 parameter R_count = 2'b01, G_count = 2'b10, B_count = 2'b11, start = 2'b00; 
 
-reg [4:0] ciclos_R, ciclos_G, ciclos_B;	//hay q agrandarlo en funcion de ciclo_unitario pq la multiplicacion puede dar valores grandes
+//reg [4:0] ciclos_R, ciclos_G, ciclos_B;	//hay q agrandarlo en funcion de ciclo_unitario pq la multiplicacion puede dar valores grandes
 reg [3:0] contador = 0;				//cuenta solo hasta 15
 reg [1:0] RGB_count = 0;       //indica que color se esta cargando
 
-always @(posedge clk) begin
-    if( B != 5'd16 /* && start*/)  begin       //Si ya pasaron los estados de lectura
-        ciclos_R <= R;
-        ciclos_G <= G;
-        ciclos_B <= B;
-	 end
+wire [4:0] ciclos_R, ciclos_G, ciclos_B;
+assign ciclos_R = R;
+assign ciclos_G = G;
+assign ciclos_B = B;
+
+initial begin
+  #10 $display("tiempo   contador    flags");
+      $monitor("(%6d)     %d         %b%b%b", $time, contador, flag_R, flag_G, flag_B);
 end
+
 
 /*always @(posedge clk) begin
     //no se si hace falta start
@@ -67,3 +70,4 @@ assign flag_B = (contador >= ciclos_B);
 
 
 endmodule
+
