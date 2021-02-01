@@ -1,4 +1,4 @@
-// Divisor de Clock 50MHz a 100Hz
+// Divisor de frecuencia
 module Clock_Divider(
     input clock_in,
     output clock_out
