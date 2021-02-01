@@ -1,9 +1,11 @@
 module Drv_teclado(
 	input clk,		//clk de 100Hz
 	input [3:0] fila,
+	input enter,
 	output reg [3:0] col = 4'b0001,
 	output reg [4:0] digito = 0,
 	output reg [1:0] desp = 0
+	output reg enter_sync
 	//output reg cambio_digito;
 );
 
@@ -12,9 +14,13 @@ reg [3:0] counter = 0;
 
 //Cuando el bit de alguna posicion está en 1, significa q esa tecla esta presionada
 parameter fila_1 = 4'b0001, col_1 = 4'b0001,
-			 fila_2 = 4'b0010, col_2 = 4'b0010,
-			 fila_3 = 4'b0100, col_3 = 4'b0100,
-			 fila_4 = 4'b1000, col_4 = 4'b1000;
+		  fila_2 = 4'b0010, col_2 = 4'b0010,
+		  fila_3 = 4'b0100, col_3 = 4'b0100,
+		  fila_4 = 4'b1000, col_4 = 4'b1000;
+
+always @(posedge clk) begin
+	enter_sync <= enter;
+end
 
 always @(posedge clk) begin
 	if(fila == 4'd0) begin
