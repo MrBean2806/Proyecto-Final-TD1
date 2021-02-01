@@ -2,9 +2,10 @@
     input clk,
     input enter,
     input [4:0] R, G, B,
-    output flag_R, flag_G, flag_B
+    output [2:0] flags
 );
-parameter R_count = 2'b01, G_count = 2'b10, B_count = 2'b11, start = 2'b00; 
+parameter r = 2'd0, g = 2'd1, b = 2'd2;
+parameter start = 2'b00, R_count = 2'b01, G_count = 2'b10, B_count = 2'b11; 
 
 //reg [4:0] ciclos_R, ciclos_G, ciclos_B;	//hay q agrandarlo en funcion de ciclo_unitario pq la multiplicacion puede dar valores grandes
 reg [3:0] contador = 0;				//cuenta solo hasta 15
@@ -64,9 +65,9 @@ end
 
 //Se activa la bandera cuando paso el tiempo de prendido de cada motor
 //Duran un ciclo de clk en 1, despues los ifs de arriba resetean los contadores
-assign flag_R = (contador >= ciclos_R);
-assign flag_G = (contador >= ciclos_G);
-assign flag_B = (contador >= ciclos_B);
+assign flags[r] = (contador >= ciclos_R);
+assign flags[g] = (contador >= ciclos_G);
+assign flags[b] = (contador >= ciclos_B);
 
 
 endmodule
