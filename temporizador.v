@@ -1,10 +1,10 @@
 	module temporizador (
     input clk,
     input enter,
-    input [4:0] R, G, B,
+    input [4:0] ciclos_R, ciclos_G, ciclos_B,
     output [2:0] flags
 );
-parameter r = 2'd0, g = 2'd1, b = 2'd2;
+parameter r = 2'd2, g = 2'd1, b = 2'd0;
 parameter start = 2'b00, R_count = 2'b01, G_count = 2'b10, B_count = 2'b11; 
 
 //reg [4:0] ciclos_R, ciclos_G, ciclos_B;	//hay q agrandarlo en funcion de ciclo_unitario pq la multiplicacion puede dar valores grandes
@@ -12,13 +12,10 @@ reg [3:0] contador = 0;				//cuenta solo hasta 15
 reg [1:0] RGB_count = 0;       //indica que color se esta cargando
 
 wire [4:0] ciclos_R, ciclos_G, ciclos_B;
-assign ciclos_R = R;
-assign ciclos_G = G;
-assign ciclos_B = B;
 
 initial begin
   #10 $display("tiempo   contador    flags");
-      $monitor("(%6d)     %d         %b%b%b", $time, contador, flag_R, flag_G, flag_B);
+      $monitor("(%6d)     %d         %b%b%b", $time, contador, flags[r], flags[g], flags[b]);
 end
 
 
