@@ -1,16 +1,17 @@
 module Drv_teclado(
-	input clk,		//clk de 100Hz
+	input clk,		//clk de 10Hz  (100ms)
 	input [3:0] fila,
 	input enter,
 	output reg [3:0] col = 4'b0001,
 	output reg [4:0] digito = 0,
-	output reg [1:0] desp = 0
-	output reg enter_sync
-	//output reg cambio_digito;
+	//output reg [1:0] desp = 0,
+	output reg enter_sync,
+	output reg cambio_digito
 );
-
+//se puede poner a la misma frec q FSM y leer el boton cada cierto tiempo
+//usando un contador
 reg [4:0] aux = 5'b10000;
-reg [3:0] counter = 0;
+//reg [3:0] counter = 0;
 
 //Cuando el bit de alguna posicion está en 1, significa q esa tecla esta presionada
 parameter fila_1 = 4'b0001, col_1 = 4'b0001,
@@ -20,26 +21,29 @@ parameter fila_1 = 4'b0001, col_1 = 4'b0001,
 
 always @(posedge clk) begin
 	enter_sync <= enter;
-end
-
-always @(posedge clk) begin
-	if(fila == 4'd0) begin
-		digito <= digito;
-	end
-	else	begin
-		if(desp == 2'b10)
-			desp <= 0;
-		else 
-			desp <= desp + 1;
-		
-		digito <= aux;
-	end
 	begin
 		col <= col <<< 1;
 		if(col == 4'b1000)
 			col <= 4'b0001;
 	end
+end
 
+always @(posedge clk) begin
+	//no hay teclas apretadas
+	if(fila == 4'd0) begin
+		digito <= digito;
+		cambio_digito <= 1'b0;
+	end
+	else	begin
+		//cuando se apriete una tecla, cambio va a ser 1 x un ciclo
+		/*if(desp == 2'b10)
+			desp <= 0;
+		 else 
+			desp <= desp + 1;
+		*/
+		digito <= aux;
+		cambio_digito <= 1'b1;
+	end
 end
 
 always @(fila, col, digito, aux) begin
