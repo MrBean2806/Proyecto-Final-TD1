@@ -11,7 +11,7 @@ parameter start = 2'b00, R_count = 2'b01, G_count = 2'b10, B_count = 2'b11;
 reg [3:0] contador = 0;				//cuenta solo hasta 15
 reg [1:0] RGB_count = 0;       //indica que color se esta cargando
 
-wire [4:0] ciclos_R, ciclos_G, ciclos_B;
+//wire [4:0] ciclos_R, ciclos_G, ciclos_B;
 
 initial begin
   #10 $display("tiempo   contador    flags");
