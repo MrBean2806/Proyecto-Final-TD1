@@ -1,36 +1,38 @@
 module Top(
     input clk,
     input enter,
+    input reset,
     input [3:0] fila, 
     output reg [3:0] col,
     output [6:0] segmentos,
     output [2:0] enable,
-    output reg [2:0] Motores
-)
-wire enter_sync;
-wire [1:0] select;
+    output [2:0] Motores
+);
+wire enter_sync, cambio, RGB_full, clk_100ms;
 wire [2:0] flags;
+wire [3:0] col_;
 wire [4:0] digito, R, G, B;
 
-Clock_Divider Clk_100ms #5000000 (.clock_in(clk), .clock_out(clk_100ms));
+always @(posedge clk) begin
+    col <= col_;
+end
 
-Drv_teclado teclado(.clk(clk), .enter(enter), .fila(fila), .col(col),
-                    .digito(digito), . desp(select), .enter_sync(enter_sync));
+Clock_Divider #5000000 Clk_100ms(.clock_in(clk), .clock_out(clk_100ms));
 
-Memoria_RGB memoria_RGB(.clk(clk), .digito(digito), .sel(select),
-                        .u(R), .d(G), .c(B));
+Drv_teclado teclado(.clk(clk), .enter(enter), .fila(fila),
+                    .col(col_), .digito(digito), .cambio_digito(cambio), .enter_sync(enter_sync));
+
+Memoria_RGB memoria_RGB(.clk(clk), .digito(digito), .cambio_digito(cambio),
+                        .u(R), .d(G), .c(B), .RGB_full(RGB_full));
 
 temporizador timer(.clk(clk), .enter(enter_sync),
-                   .R(R), .G(G), .B(B), .flags(flags) );
+                   .ciclos_R(R), .ciclos_G(G), .ciclos_B(B), .flags(flags) );
 
-Drv_display display(.clk(clk), .u(R), .d(G), .c(B)
+Drv_display display(.clk(clk), .u(R), .d(G), .c(B),
                     .enable(enable), .segmentos(segmentos));    
                                   
-FSM fsm(.clk(clk), .reset(reset),
-        .flag_R(flags[2]), flag_G(flags[1]), .flag_B(flags[2]),
-        .cambio(cambio_digito), .enter(enter) );
-
-
+FSM fsm(.clk(clk), .reset(reset), .RGB_full(RGB_full),
+        .flags(flags), .enter(enter), .Motores(Motores) );
 
 
 endmodule
