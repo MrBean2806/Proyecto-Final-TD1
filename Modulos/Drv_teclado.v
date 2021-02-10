@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 module Driver_teclado(
 	input clk,		//clk de 100Hz
-=======
-module Drv_teclado(
-	input clk,		//clk de 10Hz  (100ms)
->>>>>>> 0736da7c6f1db3598cf0e8d511f6b597c856b6ae
 	input [3:0] fila,
 	input enter,
 	output reg [3:0] col = 4'b0001,
