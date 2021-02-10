@@ -1,11 +1,12 @@
-// Multiplexor 4 a 1 bus de 4 para manejar los display de 7 segmentos
+// Modulo para multiplexar los display de 7 segmentos
+// Recibe el numero en bcd y el decoder lo convierte en 7segmentos
 
 module Drv_display(
 	input clk,
 	//input [1:0] desp,
 	input [4:0] u, d, c,
 	output reg [2:0] enable = 3'b000,
-	output reg [6:0] segmentos = 7'b0		//Digito a mostrar
+	output [6:0] segmentos		//Digito a mostrar
 );
 reg [4:0] bcd;
 reg [1:0] estado = 2'd0;

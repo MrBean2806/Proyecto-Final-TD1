@@ -1,52 +1,48 @@
 module FSM(
     input clk,
     input reset,
-    input [4:0] digito,
-    input cambio,
+    input RGB_full,
+    input [2:0] flags,
+    //input cambio,
     input enter,
-    output reg [14:0] RYB,
     output reg [2:0] Motores
-)
-    parameter lectura_R = 3'b0, lectura_Y = 3'b001, lectura_B = 3'b010,
-              carga_R = 3'b011, carga_Y = 3'b100, carga_B = 3'b101, espera = 3'b110;
-    reg [2:0] estado, estado_pos;
-    reg [32:0] t_R, t_Y, t_B;
+);
+    parameter r = 2'd2, g = 2'd1, b = 2'd0;
+    parameter lectura = 3'b0, espera = 3'b001,
+              carga_R = 3'b011, carga_Y = 3'b100, carga_B = 3'b101;
+    
+    reg [2:0] estado, estado_pos = 0;
 
-    always @ (posedge clk or negedge rst) begin
-        if( !rst )
-            estado <= lectura_R;
+    always @ (posedge clk or negedge reset) begin
+        if( !reset )
+            estado <= lectura;
         else estado <= estado_pos;
     end
 
-    always @ (estado)   begin
+    always @ (*)   begin
         case(estado)
-            lectura_R:  if(cambio) estado_pos = lectura_Y;
-                        else estado_pos = estado_pos;
-            lectura_Y:  if(!cambio) estado_pos = lectura_B;
-                        else estado_pos = estado_pos;
-            lectura_B:  if(cambio) estado_pos = espera;
-                        else estado_pos = estado_pos;
-            espera:     if(!cambio) estado_pos = lectura_R;
+            lectura:    if(RGB_full) estado_pos = espera;
+                        else estado_pos = estado;
+            espera:     if(!RGB_full) estado_pos = lectura;
                         else if(enter)  estado_pos = carga_R;
-                        else estado_pos = estado_pos;
-            carga_R:    if(t_R) estado_pos = carga_Y    else estado_pos = estado_pos;
-            carga_Y:    if(t_Y) estado_pos = carga_B    else estado_pos = estado_pos;
-            carga_B:    if(t_B) estado_pos = lectura_R  else estado_pos = estado_pos;
+                        else estado_pos = estado;
+            carga_R:    if( flags[r] ) estado_pos = carga_Y;    else estado_pos = estado;
+            carga_Y:    if( flags[g] ) estado_pos = carga_B;    else estado_pos = estado;
+            carga_B:    if( flags[b] ) estado_pos = lectura;  else estado_pos = estado;
+			default: 	estado_pos = lectura;
         endcase
     end
 
-    always @ (estado)   begin
+    always @ (*)   begin
         case (estado)
             // 5'd16 -> display en blanco
             // 5'd17 -> guion
-            lectura_R:  begin   Motores = 3'b000;   RYB =  15'b10000_10000_10000;   end
-            lectura_Y:  begin Motores = 3'b000;   RYB = {digito, RYB[9:0]}; end
-            lectura_B:  begin Motores = 3'b000; RYB = {RYB[14:10], digito, RYB[4:0]};    end
-            espera:     begin Motores = 3'b000; RYB = {RYB[14:5], digito};    end
-            carga_R:    begin Motores = 3'b100; RYB = {5'd17, 5'd16, 5'd16};   end
-            carga_Y:    begin Motores = 3'b010; RYB = {5'd16, 5'd17, 5'd16};    end
-            carga_B:    begin Motores = 3'b001; RYB = {5'd16, 5'd16, 5'd17};    end
-            default: 
+            lectura: Motores = 3'b000;
+            espera:    Motores = 3'b000;
+            carga_R:   Motores = 3'b100;
+            carga_Y:   Motores = 3'b010;
+            carga_B:   Motores = 3'b001;
+            default:   Motores = 3'b000;
         endcase
         
     end
