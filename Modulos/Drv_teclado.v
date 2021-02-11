@@ -3,7 +3,7 @@ module Driver_teclado(
 	input [3:0] fila,
 	input enter,
 	output reg [3:0] col = 4'b0001,
-	output reg [4:0] digito = 0,
+	output reg [4:0] digito = 5'd16,
 	//output reg [1:0] desp = 0,
 	output reg enter_sync,
 	output reg cambio_digito
@@ -34,21 +34,9 @@ always @(posedge clk) begin
 		digito <= digito;
 		cambio_digito <= 1'b0;
 	end
-<<<<<<< HEAD
 	else begin
 		digito <= aux;
 		cambio_digito <= !cambio_digito;
-=======
-	else	begin
-		//cuando se apriete una tecla, cambio va a ser 1 x un ciclo
-		/*if(desp == 2'b10)
-			desp <= 0;
-		 else 
-			desp <= desp + 1;
-		*/
-		digito <= aux;
-		cambio_digito <= 1'b1;
->>>>>>> 0736da7c6f1db3598cf0e8d511f6b597c856b6ae
 	end
 end
 
