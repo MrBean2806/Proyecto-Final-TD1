@@ -26,6 +26,7 @@ module test_MemoriaRGB;
 
 	// Inputs
 	reg clk;
+	reg reset;
 	reg [4:0] digito;
 	reg cambio_digito;
 
@@ -37,7 +38,8 @@ module test_MemoriaRGB;
 
 	// Instantiate the Unit Under Test (UUT)
 	Memoria_RGB uut (
-		.clk(clk), 
+		.clk(clk),
+		.reset(reset),
 		.digito(digito), 
 		.cambio_digito(cambio_digito), 
 		.u(u), 
@@ -49,6 +51,7 @@ module test_MemoriaRGB;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
+		reset = 1;
 		digito = 0;
 		cambio_digito = 0;
 
@@ -72,8 +75,9 @@ module test_MemoriaRGB;
 		join
 		#10 cambio_digito = 0;
 			 
-		#30
-		
+		#20
+		reset = 0;
+		#10 reset = 1;
 		fork
 			begin
 				digito = 5'h9;
