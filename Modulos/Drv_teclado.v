@@ -8,8 +8,6 @@ module Driver_teclado(
 	output reg enter_sync,
 	output reg cambio_digito
 );
-//se puede poner a la misma frec q FSM y leer el boton cada cierto tiempo
-//usando un contador
 reg [4:0] aux = 5'b10000;
 //reg [3:0] counter = 0;
 

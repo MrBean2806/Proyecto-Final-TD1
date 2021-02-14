@@ -34,12 +34,12 @@ module test_Drv_teclado;
 	wire [1:0] desp;
 
 	// Instantiate the Unit Under Test (UUT)
-	Drv_teclado uut (
+	Driver_teclado uut (
 		.clk(clk), 
-		.fila(fila), 
+		.fila(fila),
+		.enter(enter),
 		.col(col), 
-		.digito(digito), 
-		.desp(desp)
+		.digito(digito)
 	);
 	initial begin forever #5 clk = ~clk; end
 	initial begin

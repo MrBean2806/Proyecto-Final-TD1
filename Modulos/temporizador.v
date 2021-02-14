@@ -1,43 +1,32 @@
 module temporizador (
-    input clk,
+    input clk,  //si T=400ms, el t_max es 6 seg 
     input enter,
     input [4:0] ciclos_R, ciclos_G, ciclos_B,
     output [2:0] flags
 );
     parameter r = 2'd2, g = 2'd1, b = 2'd0;
-    parameter start = 2'b00, R_count = 2'b01, G_count = 2'b10, B_count = 2'b11; 
+    parameter start = 2'b00, R_count = 2'b01, G_count = 2'b11, B_count = 2'b10; 
 
-    //reg [4:0] ciclos_R, ciclos_G, ciclos_B;	//hay q agrandarlo en funcion de ciclo_unitario pq la multiplicacion puede dar valores grandes
-    reg [3:0] contador = 0;				//cuenta solo hasta 15
+    //reg [4:0] ciclos_R, ciclos_G, ciclos_B;
+    reg [3:0] contador = 0;			
     reg [1:0] RGB_count = 0;       //indica que color se esta cargando
 
     //wire [4:0] ciclos_R, ciclos_G, ciclos_B;
 
-    initial begin
+    /*initial begin
     #10 $display("tiempo   contador    flags");
         $monitor("(%6d)     %d         %b%b%b", $time, contador, flags[r], flags[g], flags[b]);
     end
-
-
-    /*always @(posedge clk) begin
-        //no se si hace falta start
-        begin
-            if(enter)
-                start <= 1;
-            else 
-                start <= start;
-            end
-    end
-        */	
+    */
 
     always @(posedge clk) begin
+        //RGB_count indica que color se esta cargando, va pasando secuencialmente entre colores
         case (RGB_count)
-            //agregarle shift aritmetico
             start: begin
                         if(enter)   RGB_count <= R_count; 
                         else        RGB_count <= RGB_count; //hace falta?
                     end
-            R_count: begin
+            R_count: begin      //carga rojo
                         if(contador >= ciclos_R) begin
                             RGB_count <= G_count;    //paso al sig color
                             contador <= 0;          

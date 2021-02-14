@@ -13,16 +13,8 @@ module Memoria_RGB(
 );
 reg [2:0] sel = 0;
 
-//always @(posedge clk) begin
-//	if( cambio_digito )	begin
-//		if( sel == 3'b111 )
-//			sel <= 0;	
-//		else
-//			sel <= sel + 1;
-//	end
-//end
  initial begin
-	 #10 $monitor("(%6d)	sel = %b", $time, sel);
+	 $monitor("(%6d ns)	digito = %h, c = %h, d = %h, u = %h, full = %b", $time, digito, c, d, u, RGB_full);
  end	
 
 
