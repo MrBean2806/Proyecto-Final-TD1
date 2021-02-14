@@ -47,7 +47,9 @@ module temporizador (
             //no hace falta el default pq estan incluidos todos los valores de RGB_count
         endcase
     end
-
+    //initial begin
+    //    $monitor("flags = %b%b%b", flags[r], flags[g], flags[b]);
+    //end
 
     //Se activa la bandera cuando paso el tiempo de prendido de cada motor
     //Duran un ciclo de clk en 1, despues los ifs de arriba resetean los contadores

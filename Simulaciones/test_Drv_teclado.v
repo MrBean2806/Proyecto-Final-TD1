@@ -31,7 +31,6 @@ module test_Drv_teclado;
 	// Outputs
 	wire [3:0] col;
 	wire [4:0] digito;
-	wire [1:0] desp;
 
 	// Instantiate the Unit Under Test (UUT)
 	Driver_teclado uut (
@@ -41,35 +40,30 @@ module test_Drv_teclado;
 		.col(col), 
 		.digito(digito)
 	);
-	initial begin forever #5 clk = ~clk; end
+	initial begin forever #10 clk = ~clk; end
 	initial begin
-		// Initialize Inputs
 		clk = 0;
 		fila = 0;
-		
-		// Wait 100 ns for global reset to finish
-		#100;      
+		#60
 
-		
 		fila = 4'b0001;
-		#10
+		#20
 		fila = 4'b0;
 		
-		#40
+		#60
 		fila = 4'b0010;
-		#10
+		#20
 		fila = 4'b0;
 		
-		#40
+		#60
 		fila = 4'b0100;
-		#10
+		#20
 		fila = 4'b0;
 		
-		#40
-		fila = 4'b1000;
-		#10
+		#80
+		fila = 4'b0001;
+		#20
 		fila = 4'b0;
-		// Add stimulus here
 
 	end
       

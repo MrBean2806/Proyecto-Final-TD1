@@ -13,9 +13,9 @@ module Memoria_RGB(
 );
 reg [2:0] sel = 0;
 
- initial begin
-	 $monitor("(%6d ns)	digito = %h, c = %h, d = %h, u = %h, full = %b", $time, digito, c, d, u, RGB_full);
- end	
+ //initial begin
+//	 $monitor("(%6d ns)	digito = %h, c = %h, d = %h, u = %h, full = %b", $time, digito, c, d, u, RGB_full);
+ //end	
 
 
 always @(posedge clk) begin

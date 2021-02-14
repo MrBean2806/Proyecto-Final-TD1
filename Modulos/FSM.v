@@ -19,6 +19,10 @@ module FSM(
         else estado <= estado_pos;
     end
 
+    initial begin
+        $monitor("(%6d ns)  Estado FSM = %b", $time, estado);
+    end
+
     always @ (*)   begin
         case(estado)
             lectura:    if(RGB_full) estado_pos = espera;
