@@ -19,7 +19,7 @@ reg [2:0] sel = 0;
 
 
 always @(posedge clk) begin
-	if( !reset )	begin
+	if( reset )	begin
 		sel <= 0;
 		u <= 5'd16;
 		d <= 5'd16;
