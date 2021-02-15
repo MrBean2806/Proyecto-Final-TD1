@@ -57,7 +57,7 @@ module test_MemoriaRGB;
 
 		// Wait 100 ns for global reset to finish
 		#105;
-      
+      //Escribo R
 		fork
 			begin
 				digito = 5'h1;
@@ -66,7 +66,7 @@ module test_MemoriaRGB;
 		join
 		#10 cambio_digito = 0;
 		#30
-		
+	//Escribo G
 		fork
 			begin
 				digito = 5'hF;
@@ -74,10 +74,13 @@ module test_MemoriaRGB;
 			end
 		join
 		#10 cambio_digito = 0;
-			 
+	
+	//Pruebo el reset
 		#20
 		reset = 0;
 		#10 reset = 1;
+	
+	//Escribo un 9
 		fork
 			begin
 				digito = 5'h9;
@@ -87,7 +90,7 @@ module test_MemoriaRGB;
 		#10 cambio_digito = 0;
 		
 		#30
-		
+	//Escribo una A	
 		fork
 			begin
 				digito = 5'hA;
@@ -96,7 +99,7 @@ module test_MemoriaRGB;
 		join
 		#10 cambio_digito = 0;
 		#30
-		
+	//Escribo una A	
 		fork
 			begin
 				digito = 5'hA;
@@ -105,7 +108,7 @@ module test_MemoriaRGB;
 		join
 		#10 cambio_digito = 0;
 		#30
-		
+	//Escribo una A para hacer q se resetee el display	
 		fork
 			begin
 				digito = 5'hA;

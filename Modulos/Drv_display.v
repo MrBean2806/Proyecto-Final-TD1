@@ -3,7 +3,6 @@
 
 module Drv_display(
 	input clk,
-	//input [1:0] desp,
 	input [4:0] u, d, c,
 	output reg [2:0] enable = 3'b000,
 	output [6:0] segmentos		//Digito a mostrar
