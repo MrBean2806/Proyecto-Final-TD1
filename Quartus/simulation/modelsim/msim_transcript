@@ -1,0 +1,82 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Dosificador-Tintometrico_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Top.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Top
+# 
+# Top level modules:
+# 	Top
+# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/BCD_7segmentos.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module BCD_7segmentos
+# 
+# Top level modules:
+# 	BCD_7segmentos
+# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Drv_display.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Drv_display
+# 
+# Top level modules:
+# 	Drv_display
+# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Driver_teclado.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Driver_teclado
+# 
+# Top level modules:
+# 	Driver_teclado
+# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/FSM.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FSM
+# 
+# Top level modules:
+# 	FSM
+# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Memoria_RGB.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Memoria_RGB
+# 
+# Top level modules:
+# 	Memoria_RGB
+# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Temporizador.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Temporizador
+# 
+# Top level modules:
+# 	Temporizador
+# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Filtro_Rebote.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Filtro_Rebote
+# 
+# Top level modules:
+# 	Filtro_Rebote
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Filtro_Rebote_tb
+# 
+# Top level modules:
+# 	Filtro_Rebote_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  Filtro_Rebote_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps Filtro_Rebote_tb 
+# Loading work.Filtro_Rebote_tb
+# Loading work.Filtro_Rebote
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module Filtro_Rebote_tb at C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v line 89
+# Simulation Breakpoint: Break in Module Filtro_Rebote_tb at C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v line 89
+# MACRO ./Dosificador-Tintometrico_run_msim_rtl_verilog.do PAUSED at line 24

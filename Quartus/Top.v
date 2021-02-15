@@ -7,7 +7,8 @@ module Top(
     output [3:0] col,
     output [6:0] segmentos,
     output [2:0] enable,
-    output [2:0] Motores
+    output [2:0] Motores,
+	 output enter_test
 	);
 	wire enter_sync, cambio, RGB_full, clk_60ms, clk_400ms;
 	wire [2:0] flags;
@@ -36,6 +37,7 @@ module Top(
 												 
 	FSM fsm(.clk(clk), .reset(reset), .RGB_full(RGB_full),
 			  .flags(flags), .enter(enter_sync), .Motores(Motores) );
-
+			  
+	Filtro_Rebote(.clk(clk),.pulso_real(enter),.pulso_ideal(enter_test));
 
 endmodule
