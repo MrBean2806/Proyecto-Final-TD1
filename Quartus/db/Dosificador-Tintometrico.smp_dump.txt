@@ -1,0 +1,15 @@
+
+State Machine - |Top|FSM:fsm|estado
+Name estado.carga_B estado.carga_Y estado.espera estado.000 estado.carga_R 
+estado.000 0 0 0 0 0 
+estado.espera 0 0 1 1 0 
+estado.carga_R 0 0 0 1 1 
+estado.carga_Y 0 1 0 1 0 
+estado.carga_B 1 0 0 1 0 
+
+State Machine - |Top|Temporizador:timer|RGB_count
+Name RGB_count.G_count RGB_count.B_count RGB_count.R_count RGB_count.00 
+RGB_count.00 0 0 0 0 
+RGB_count.R_count 0 0 1 1 
+RGB_count.B_count 0 1 0 1 
+RGB_count.G_count 1 0 0 1 
