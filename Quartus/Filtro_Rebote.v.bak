@@ -1,0 +1,32 @@
+module Filtro_Rebote (
+	input clk, pulso_real,
+	output reg pulso_ideal
+);
+
+reg [31:0] counter = 32'd0;
+reg flag = 1'b0;
+
+parameter duracion = 32'd5; //Duracion en microsegundos del pulso 
+
+always @(posedge clk, posedge pulso_real) begin
+
+	if(flag) begin
+		counter <= counter + 32'd1;
+		if(counter == )
+	end
+	else
+		counter <= 32'd0;
+
+end
+
+
+
+always @(posedge pulso_real) begin
+
+	if(pulso_real) begin
+		flag = 1'b1;
+	end
+
+end
+
+endmodule
