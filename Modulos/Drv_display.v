@@ -8,35 +8,25 @@ module Drv_display(
 	output [6:0] segmentos		//Digito a mostrar
 );
 reg [4:0] bcd;
-reg [1:0] estado = 2'd0;
-//mepa q no hace falta estado, se puede usar enable para ir
-//haciendo las transiciones
-always @(posedge clk) begin
-		
-		if(estado >= 2'd2)
-			estado <= 2'd0;
-		else
-			estado <= estado + 2'd1;
-end
 
-always @(*) begin
-	case (estado)
-		2'd0: begin
-					enable <= 3'b100;
-					bcd <= u;
-				end
-		2'd1: begin
-					enable <= 3'b010;
+always @(posedge clk) begin
+	case (enable)
+		3'b001: begin
 					bcd <= d;
+					enable <= enable <<< 1; 
 				end
-		2'd2: begin
-					enable <= 3'b001;
+		3'b010: begin
 					bcd <= c;
+					enable <= enable <<< 1; 
+				end
+		3'b100: begin
+					bcd <= u;
+					enable <= 3'b001;
 				end
 		default: begin
-					enable <= 3'b100;
+					enable <= 3'b001;
 					bcd <= 5'b10001;
-					end
+				end
 	endcase
 end
 
