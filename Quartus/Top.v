@@ -38,6 +38,6 @@ module Top(
 	FSM fsm(.clk(clk), .reset(reset), .RGB_full(RGB_full),
 			  .flags(flags), .enter(enter_sync), .Motores(Motores) );
 			  
-	Filtro_Rebote(.clk(clk),.pulso_real(enter),.pulso_ideal(enter_test));
+	Filtro_Rebote filtro_enter(.clk(clk),.pulso_real(enter),.pulso_ideal(enter_test));
 
 endmodule

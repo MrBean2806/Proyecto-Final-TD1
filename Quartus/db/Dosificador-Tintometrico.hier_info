@@ -23,7 +23,7 @@ enable[2] <= Drv_display:display.enable
 Motores[0] <= FSM:fsm.Motores
 Motores[1] <= FSM:fsm.Motores
 Motores[2] <= FSM:fsm.Motores
-enter_test <= Filtro_Rebote:comb_5.pulso_ideal
+enter_test <= Filtro_Rebote:filtro_enter.pulso_ideal
 
 
 |Top|Driver_teclado:teclado
@@ -217,7 +217,7 @@ Motores[1] <= Motores[1].DB_MAX_OUTPUT_PORT_TYPE
 Motores[2] <= Motores[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Top|Filtro_Rebote:comb_5
+|Top|Filtro_Rebote:filtro_enter
 clk => pulso_ideal~reg0.CLK
 clk => counter[0].CLK
 clk => counter[1].CLK

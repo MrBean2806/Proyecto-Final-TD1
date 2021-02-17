@@ -46,37 +46,3 @@
 # 
 # Top level modules:
 # 	Memoria_RGB
-# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Temporizador.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Temporizador
-# 
-# Top level modules:
-# 	Temporizador
-# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Filtro_Rebote.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Filtro_Rebote
-# 
-# Top level modules:
-# 	Filtro_Rebote
-# 
-# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Filtro_Rebote_tb
-# 
-# Top level modules:
-# 	Filtro_Rebote_tb
-# 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  Filtro_Rebote_tb
-# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps Filtro_Rebote_tb 
-# Loading work.Filtro_Rebote_tb
-# Loading work.Filtro_Rebote
-# 
-# add wave *
-# view structure
-# .main_pane.structure.interior.cs.body.struct
-# view signals
-# .main_pane.objects.interior.cs.body.tree
-# run -all
-# Break in Module Filtro_Rebote_tb at C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v line 89
-# Simulation Breakpoint: Break in Module Filtro_Rebote_tb at C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v line 89
-# MACRO ./Dosificador-Tintometrico_run_msim_rtl_verilog.do PAUSED at line 24

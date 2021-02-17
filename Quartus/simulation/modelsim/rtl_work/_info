@@ -20,7 +20,7 @@ n@b@c@d_7segmentos
 !i10b 1
 !s100 [oRQKc4Q`KI[GoX0ihcP]3
 !s85 0
-!s108 1613431167.110000
+!s108 1613431818.974000
 !s107 C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/BCD_7segmentos.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/BCD_7segmentos.v|
 !s101 -O0
@@ -41,7 +41,7 @@ n@driver_teclado
 !i10b 1
 !s100 cV4=lWC=^jKl7PYXBz94A0
 !s85 0
-!s108 1613431167.313000
+!s108 1613431819.181000
 !s107 C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Driver_teclado.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Driver_teclado.v|
 !s101 -O0
@@ -62,52 +62,10 @@ n@drv_display
 !i10b 1
 !s100 D?A@VAB6XHHkmO@G@M@l53
 !s85 0
-!s108 1613431167.203000
+!s108 1613431819.074000
 !s107 C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Drv_display.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Drv_display.v|
 !s101 -O0
-vFiltro_Rebote
-I7h?M4VnVnV947?3]ckO0]0
-VjZAn:S2m>9<WW`_mXgTS81
-R1
-w1613430858
-8C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Filtro_Rebote.v
-FC:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Filtro_Rebote.v
-L0 1
-R2
-r1
-31
-R3
-R4
-n@filtro_@rebote
-!i10b 1
-!s100 R[2[Q2V5bSZe_PENmeNA>0
-!s85 0
-!s108 1613431167.735000
-!s107 C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Filtro_Rebote.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Filtro_Rebote.v|
-!s101 -O0
-vFiltro_Rebote_tb
-!i10b 1
-!s100 BdJ^3L>`HG7j1:7_9m7lc2
-I9lz]Z1]B>l7US_W8<h6c<2
-V8H`5`m[dZjm]@<BQj4LA[3
-R1
-w1613431138
-8C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v
-FC:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v
-L0 3
-R2
-r1
-!s85 0
-31
-!s108 1613431167.860000
-!s107 C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim|C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v|
-!s101 -O0
-R3
-!s92 -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim -O0
-n@filtro_@rebote_tb
 vFSM
 I7<fT`Bo8RIU:cjokndbd<1
 VjbAN>]0V5PTnVaoC>^mX43
@@ -125,11 +83,13 @@ n@f@s@m
 !i10b 1
 !s100 I31h64Ya`IC7[DBFFQfOh0
 !s85 0
-!s108 1613431167.422000
+!s108 1613431819.281000
 !s107 C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/FSM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/FSM.v|
 !s101 -O0
 vMemoria_RGB
+!i10b 1
+!s100 <Fd2?mA0TPZSI>=5laNWT3
 IdBO]bd4H>>bX^GT2AAnCO3
 VWf@]bckNl4@3@kYAMb9Zl0
 R1
@@ -139,43 +99,20 @@ FC:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Memoria_RGB.v
 L0 4
 R2
 r1
-31
-R3
-R4
-n@memoria_@r@g@b
-!i10b 1
-!s100 <Fd2?mA0TPZSI>=5laNWT3
 !s85 0
-!s108 1613431167.532000
+31
+!s108 1613431819.397000
 !s107 C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Memoria_RGB.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Memoria_RGB.v|
 !s101 -O0
-vTemporizador
-IB`nbDAREoFL2aB;I@_?NZ3
-VOBdzMSSI^ZoamWJb]onQ31
-R1
-w1613424586
-8C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Temporizador.v
-FC:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Temporizador.v
-L0 1
-R2
-r1
-31
 R3
 R4
-n@temporizador
-!i10b 1
-!s100 XkY@k>>KP<hHkaZEfgD;71
-!s85 0
-!s108 1613431167.625000
-!s107 C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Temporizador.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Temporizador.v|
-!s101 -O0
+n@memoria_@r@g@b
 vTop
-IObO7_3K84Z@[1?5@dP9OF0
+IYik?d<dS;2hP@9]XdIPVB0
 VNbf[cPf49^QebZWO8AjfH1
 R1
-w1613428753
+w1613431643
 8C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Top.v
 FC:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Top.v
 L0 2
@@ -186,9 +123,9 @@ R3
 n@top
 R4
 !i10b 1
-!s100 zGnG3RQfHG@FZM4e08WV11
+!s100 `Jk>RkS18GkQZedEg^Wh;0
 !s85 0
-!s108 1613431167.007000
+!s108 1613431818.858000
 !s107 C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Top.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Top.v|
 !s101 -O0

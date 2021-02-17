@@ -10,7 +10,7 @@ parameter duracion_ms = 32'd2; //Duracion en milisegundos del pulso
 always @(posedge clk) begin
 
 	if(pulso_ideal) begin
-		if(counter == 32'd4) begin // 50000 = 1ms
+		if(counter == (32'd50000*duracion_ms)) begin // 50000 = 1ms
 			counter = 32'd0;
 			pulso_ideal = 1'b0; 
 		end 
