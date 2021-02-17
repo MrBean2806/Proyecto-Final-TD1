@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon Feb 15 20:30:49 2021
+Fitter Status : Successful - Tue Feb 16 22:51:21 2021
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : Dosificador-Tintometrico
 Top-level Entity Name : Top
 Family : Cyclone II
 Device : EP2C5T144C8
 Timing Models : Final
-Total logic elements : 170 / 4,608 ( 4 % )
-    Total combinational functions : 168 / 4,608 ( 4 % )
-    Dedicated logic registers : 77 / 4,608 ( 2 % )
-Total registers : 77
-Total pins : 25 / 89 ( 28 % )
+Total logic elements : 163 / 4,608 ( 4 % )
+    Total combinational functions : 162 / 4,608 ( 4 % )
+    Dedicated logic registers : 76 / 4,608 ( 2 % )
+Total registers : 76
+Total pins : 24 / 89 ( 27 % )
 Total virtual pins : 0
 Total memory bits : 0 / 119,808 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )

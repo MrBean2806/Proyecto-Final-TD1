@@ -5,7 +5,7 @@ module Filtro_Rebote (
 
 reg [31:0] counter = 32'd0;
 
-parameter duracion_ms = 32'd2; //Duracion en milisegundos del pulso 
+parameter duracion_ms = 32'd20; //Duracion en milisegundos del pulso 
 
 always @(posedge clk) begin
 
@@ -27,6 +27,7 @@ always @(posedge clk) begin
 		else
 			pulso_ideal = pulso_ideal;
 	end
+	
 end
 
 endmodule

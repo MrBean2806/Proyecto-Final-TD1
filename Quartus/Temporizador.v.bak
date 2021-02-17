@@ -1,6 +1,6 @@
 module Temporizador (
     input clk,  //si T=400ms, el t_max es 6 seg 
-    input trigger,
+    input enter,
     input [4:0] ciclos_R, ciclos_G, ciclos_B,
     output [2:0] flags
 );
@@ -23,7 +23,7 @@ module Temporizador (
         //RGB_count indica que color se esta cargando, va pasando secuencialmente entre colores
         case (RGB_count)
             start: begin
-                        if(trigger)   RGB_count <= R_count; 
+                        if(enter)   RGB_count <= R_count; 
                         else        RGB_count <= RGB_count; //hace falta?
                     end
             R_count: begin      //carga rojo
@@ -31,19 +31,19 @@ module Temporizador (
                             RGB_count <= G_count;    //paso al sig color
                             contador <= 0;          
                         end
-                        else contador <= contador + 4'd1;
+                        else contador <= contador + 1;
                     end
             G_count: if(contador >= ciclos_G) begin
                         RGB_count <= B_count;
                         contador <= 0;
                     end
-                    else contador <= contador + 4'd1;
+                    else contador <= contador + 1;
             B_count: if(contador >= ciclos_B) begin
                         //start <= 0;
                         RGB_count <= start;
                         contador <= 0;
                     end
-                    else contador <= contador + 4'd1;
+                    else contador <= contador + 1;
             //no hace falta el default pq estan incluidos todos los valores de RGB_count
         endcase
     end
