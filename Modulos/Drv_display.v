@@ -4,30 +4,27 @@
 module Drv_display(
 	input clk,
 	input [4:0] u, d, c,
-	output reg [2:0] enable = 3'b000,
+	output reg [2:0] enable = 3'b001,
 	output [6:0] segmentos		//Digito a mostrar
 );
-reg [4:0] bcd;
+
+reg [4:0] bcd = 5'd16;
 
 always @(posedge clk) begin
-	case (enable)
-		3'b001: begin
-					bcd <= d;
-					enable <= enable <<< 1; 
-				end
-		3'b010: begin
-					bcd <= c;
-					enable <= enable <<< 1; 
-				end
-		3'b100: begin
-					bcd <= u;
-					enable <= 3'b001;
-				end
-		default: begin
-					enable <= 3'b001;
-					bcd <= 5'b10001;
-				end
+	if(enable == 3'b100)
+		enable <= 3'b001;
+	else
+		enable <= enable <<< 1;
+end
+
+always @(*) begin
+	case(enable)
+		3'b001: bcd = u;
+		3'b010: bcd = d;	
+		3'b100: bcd = c;
+		default: bcd = 5'd17;
 	endcase
+
 end
 
 BCD_7segmentos Decoder (.bcd(bcd), .segmentos(segmentos));
