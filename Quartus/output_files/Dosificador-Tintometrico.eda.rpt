@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Dosificador-Tintometrico
-Mon Feb 15 20:19:13 2021
+Tue Feb 16 22:51:31 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Feb 15 20:19:13 2021 ;
+; EDA Netlist Writer Status ; Successful - Tue Feb 16 22:51:31 2021 ;
 ; Revision Name             ; Dosificador-Tintometrico              ;
 ; Top-level Entity Name     ; Top                                   ;
 ; Family                    ; Cyclone II                            ;
@@ -84,13 +84,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Feb 15 20:19:12 2021
+    Info: Processing started: Tue Feb 16 22:51:29 2021
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Dosificador-Tintometrico -c Dosificador-Tintometrico
 Info (204026): Generated files "Dosificador-Tintometrico.vo", "Dosificador-Tintometrico_fast.vo", "Dosificador-Tintometrico_v.sdo" and "Dosificador-Tintometrico_v_fast.sdo" in directory "C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 4527 megabytes
-    Info: Processing ended: Mon Feb 15 20:19:13 2021
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Tue Feb 16 22:51:31 2021
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

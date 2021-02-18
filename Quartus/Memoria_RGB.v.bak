@@ -18,8 +18,8 @@ reg [2:0] sel = 0;
 	//end	
 
 
-always @(posedge clk, negedge reset) begin
-	if(!reset)	begin
+always @(posedge clk) begin
+	if( reset )	begin
 		sel <= 0;
 		u <= 5'd16;
 		d <= 5'd16;
@@ -33,26 +33,26 @@ always @(posedge clk, negedge reset) begin
 						u <= digito;
 						d <= 5'd16;
 						c <= 5'd16;
-						sel <= sel + 3'd1;	
+						sel <= sel + 1;	
 					end
 			3'b011: begin 
 						u <= digito;
 						d <= u;
 						c <= 5'd16;
-						sel <= sel + 3'd1;	
+						sel <= sel + 1;		
 					end
 			3'b101: begin 
 						u <= digito;
 						d <= u;
 						c <= d;
-						sel <= 3'd0;		//reseteo
+						sel <= 0;		//reseteo
 					end
 			default: begin
 						u <= u;
 						d <= d;
 						c <= c;
 						if(cambio_digito)
-							sel <= sel + 3'd1;
+							sel <= sel + 1;
 						end
 		endcase
 	end
