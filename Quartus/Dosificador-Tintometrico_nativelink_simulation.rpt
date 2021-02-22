@@ -1,22 +1,102 @@
 Info: Start Nativelink Simulation process
-Info: NativeLink has detected Verilog design -- Verilog simulation models will be used
 
 ========= EDA Simulation Settings =====================
 
-Sim Mode              :  RTL
+Sim Mode              :  Gate
 Family                :  cycloneii
 Quartus root          :  c:/altera/13.0sp1/quartus/bin64/
 Quartus sim root      :  c:/altera/13.0sp1/quartus/eda/sim_lib
 Simulation Tool       :  modelsim-altera
 Simulation Language   :  verilog
 Simulation Mode       :  GUI
-Sim Output File       :  
-Sim SDF file          :  
+Sim Output File       :  Dosificador-Tintometrico.vo
+Sim SDF file          :  Dosificador-Tintometrico__verilog.sdo
 Sim dir               :  simulation\modelsim
 
 =======================================================
 
 Info: Starting NativeLink simulation with ModelSim-Altera software
 Sourced NativeLink script c:/altera/13.0sp1/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File Dosificador-Tintometrico_run_msim_rtl_verilog.do already exists - backing up current file as Dosificador-Tintometrico_run_msim_rtl_verilog.do.bak11
-Info: Spawning ModelSim-Altera Simulation software 
+Warning: File Dosificador-Tintometrico_run_msim_gate_verilog.do already exists - backing up current file as Dosificador-Tintometrico_run_msim_gate_verilog.do.bak4
+Probing transcript
+ModelSim-Altera Info: # Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+ModelSim-Altera Info: # do Dosificador-Tintometrico_run_msim_gate_verilog.do 
+ModelSim-Altera Info: # if {[file exists gate_work]} {
+ModelSim-Altera Info: # 	vdel -lib gate_work -all
+ModelSim-Altera Info: # }
+ModelSim-Altera Info: # vlib gate_work
+ModelSim-Altera Info: # vmap work gate_work
+ModelSim-Altera Info: # Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+ModelSim-Altera Info: # Modifying modelsim.ini
+ModelSim-Altera Warning: # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+ModelSim-Altera Info: #          Updated modelsim.ini.
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vlog -vlog01compat -work work +incdir+. {Dosificador-Tintometrico.vo}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module Top
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	Top
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v}
+ModelSim-Altera Info: # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+ModelSim-Altera Info: # -- Compiling module Drv_display_tb
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # Top level modules:
+ModelSim-Altera Info: # 	Drv_display_tb
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: # vsim -t 1ps +transport_int_delays +transport_path_delays -L cycloneii_ver -L gate_work -L work -voptargs="+acc"  Drv_display_tb
+ModelSim-Altera Info: # vsim +transport_int_delays +transport_path_delays -L cycloneii_ver -L gate_work -L work -voptargs=\"+acc\" -t 1ps Drv_display_tb 
+ModelSim-Altera Info: # Loading work.Drv_display_tb
+ModelSim-Altera Error: # ** Error: (vsim-3033) C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v(18): Instantiation of 'Drv_display' failed. The design unit was not found.
+ModelSim-Altera Info: # 
+ModelSim-Altera Info: #         Region: /Drv_display_tb
+ModelSim-Altera Info: #         Searched libraries:
+ModelSim-Altera Info: #             C:/altera/13.0sp1/modelsim_ase/altera/verilog/cycloneii
+ModelSim-Altera Info: #             C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
+ModelSim-Altera Info: #             C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
+ModelSim-Altera Info: #             C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
+ModelSim-Altera Info: # Error loading design
+ModelSim-Altera Info: # Error: Error loading design 
+ModelSim-Altera Info: #        Pausing macro execution 
+ModelSim-Altera Info: # MACRO ./Dosificador-Tintometrico_run_msim_gate_verilog.do PAUSED at line 12
+Error: Errors encountered while running modelsim do file
+Error: NativeLink simulation flow was NOT successful
+
+
+
+================The following additional information is provided to help identify the cause of error while running nativelink scripts=================
+Nativelink TCL script failed with errorCode:  1
+Nativelink TCL script failed with errorInfo:  1
+    (procedure "launch_sim" line 1)
+    invoked from within
+"launch_sim launch_args_hash"
+    ("eval" body line 1)
+    invoked from within
+"eval launch_sim launch_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+				set savedCode $::errorCode
+				set savedInfo $::errorInfo
+				error $result $savedInfo $savedCode
+			} else {
+			..."
+    invoked from within
+"if [catch {eval launch_sim launch_args_hash} result ] {
+			set status 1
+			if [ info exists ::errorCode ] {
+				set savedCode $::errorCode
+				set sav..."
+    (procedure "run_sim" line 78)
+    invoked from within
+"run_sim run_sim_args_hash"
+    invoked from within
+"if [ info exists ::errorCode ] {
+			set savedCode $::errorCode
+			set savedInfo $::errorInfo
+			error "$result" $savedInfo $savedCode
+		} else {
+			er..."
+    (procedure "run_eda_simulation_tool" line 330)
+    invoked from within
+"run_eda_simulation_tool eda_opts_hash"
