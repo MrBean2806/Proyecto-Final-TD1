@@ -8,7 +8,6 @@ module Top(
     output [6:0] segmentos,
     output [2:0] enable,
     output [2:0] Motores
-	 //output enter_test
 	);
 	wire cambio, RGB_full, clk_60ms, clk_400ms, trigger, enter_ideal;
 	wire [2:0] flags;

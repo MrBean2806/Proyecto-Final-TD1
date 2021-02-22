@@ -1,48 +1,41 @@
 # Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
-# do Dosificador-Tintometrico_run_msim_rtl_verilog.do 
-# if {[file exists rtl_work]} {
-# 	vdel -lib rtl_work -all
+# do Dosificador-Tintometrico_run_msim_gate_verilog.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
 # }
-# vlib rtl_work
-# vmap work rtl_work
+# vlib gate_work
+# vmap work gate_work
 # Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Top.v}
+# vlog -vlog01compat -work work +incdir+. {Dosificador-Tintometrico.vo}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module Top
 # 
 # Top level modules:
 # 	Top
-# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/BCD_7segmentos.v}
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module BCD_7segmentos
+# -- Compiling module Drv_display_tb
 # 
 # Top level modules:
-# 	BCD_7segmentos
-# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Drv_display.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Drv_display
+# 	Drv_display_tb
 # 
-# Top level modules:
-# 	Drv_display
-# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Driver_teclado.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Driver_teclado
+# vsim -t 1ps +transport_int_delays +transport_path_delays -L cycloneii_ver -L gate_work -L work -voptargs="+acc"  Drv_display_tb
+# vsim +transport_int_delays +transport_path_delays -L cycloneii_ver -L gate_work -L work -voptargs=\"+acc\" -t 1ps Drv_display_tb 
+# Loading work.Drv_display_tb
+# ** Error: (vsim-3033) C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v(18): Instantiation of 'Drv_display' failed. The design unit was not found.
 # 
-# Top level modules:
-# 	Driver_teclado
-# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/FSM.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module FSM
-# 
-# Top level modules:
-# 	FSM
-# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Memoria_RGB.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Memoria_RGB
-# 
-# Top level modules:
-# 	Memoria_RGB
+#         Region: /Drv_display_tb
+#         Searched libraries:
+#             C:/altera/13.0sp1/modelsim_ase/altera/verilog/cycloneii
+#             C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
+#             C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
+#             C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./Dosificador-Tintometrico_run_msim_gate_verilog.do PAUSED at line 12

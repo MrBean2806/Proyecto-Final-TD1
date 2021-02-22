@@ -17,7 +17,8 @@ entity FSM is
         RGB_full        : in     vl_logic;
         flags           : in     vl_logic_vector(2 downto 0);
         enter           : in     vl_logic;
-        Motores         : out    vl_logic_vector(2 downto 0)
+        Motores         : out    vl_logic_vector(2 downto 0);
+        trigger         : out    vl_logic
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of r : constant is 1;

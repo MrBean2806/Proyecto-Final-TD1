@@ -14,9 +14,9 @@ vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/
 vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Temporizador.v}
 vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/Filtro_Rebote.v}
 
-vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v}
+vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v}
 
-vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  Filtro_Rebote_tb
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  Drv_display_tb
 
 add wave *
 view structure
