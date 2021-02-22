@@ -34,7 +34,7 @@ always @(posedge clk) begin
 	end
 	else begin
 		digito <= aux;
-		cambio_digito <= !cambio_digito;
+		cambio_digito <= 1'b1;
 	end
 end
 
