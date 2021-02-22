@@ -1,12 +1,12 @@
-// Conversor BCD a 7 segmentos
+// Conversor HEX a 7 segmentos
 
-module BCD_7segmentos(
-	input [4:0] bcd,
+module Hex_7segmentos(
+	input [4:0] hex,
 	output reg [6:0] segmentos //MSB = a  ; LSB = g
 );
 
-always@(bcd)	begin
-	case(bcd)
+always@(hex)	begin
+	case(hex)
 		5'b00000: segmentos <= 7'b1111110; 
 		5'b00001: segmentos <= 7'b0110000; 
 		5'b00010: segmentos <= 7'b1101101; 
