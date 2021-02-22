@@ -4,15 +4,15 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   17:16:32 01/19/2021
-// Design Name:   Drv_teclado
-// Module Name:   C:/Users/agusb/OneDrive/Escritorio/ISE_Projects/ProyectoFinal/test_Drv_teclado.v
+// Create Date:   13:52:53 02/22/2021
+// Design Name:   Driver_teclado
+// Module Name:   C:/Users/agusb/OneDrive/Escritorio/ISE_Projects/ProyectoFinal/test_driver_teclado.v
 // Project Name:  ProyectoFinal
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: Drv_teclado
+// Verilog Test Fixture created by ISE for module: Driver_teclado
 //
 // Dependencies:
 // 
@@ -22,7 +22,7 @@
 // 
 ////////////////////////////////////////////////////////////////////////////////
 
-module test_Drv_teclado;
+module test_driver_teclado;
 
 	// Inputs
 	reg clk;
@@ -31,30 +31,35 @@ module test_Drv_teclado;
 	// Outputs
 	wire [3:0] col;
 	wire [4:0] digito;
+	wire cambio_digito;
 
 	// Instantiate the Unit Under Test (UUT)
 	Driver_teclado uut (
 		.clk(clk), 
-		.fila(fila),
-		.enter(enter),
+		.fila(fila), 
 		.col(col), 
-		.digito(digito)
+		.digito(digito), 
+		.cambio_digito(cambio_digito)
 	);
+
 	initial begin forever #10 clk = ~clk; end
 	initial begin
 		clk = 0;
 		fila = 0;
 		#60
 
+		//Escribo un 1
 		fila = 4'b0001;
 		#20
 		fila = 4'b0;
 		
+		//Escribo un 2
 		#60
 		fila = 4'b0010;
 		#20
 		fila = 4'b0;
 		
+		//Escribo un 
 		#60
 		fila = 4'b0100;
 		#20
