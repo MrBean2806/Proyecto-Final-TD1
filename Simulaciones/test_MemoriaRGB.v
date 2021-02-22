@@ -51,45 +51,56 @@ module test_MemoriaRGB;
 	initial begin
 		// Initialize Inputs
 		clk = 0;
-		reset = 1;
+		reset = 0;
 		digito = 0;
 		cambio_digito = 0;
 
 		// Wait 100 ns for global reset to finish
 		#105;
-      //Escribo R
+      //Escribo A
 		fork
 			begin
-				digito = 5'h1;
+				digito = 5'hA;
 				cambio_digito = 1;
 			end
 		join
 		#10 cambio_digito = 0;
 		#30
-	//Escribo G
+	//Escribo B
 		fork
 			begin
-				digito = 5'hF;
+				digito = 5'hB;
 				cambio_digito = 1;
 			end
 		join
 		#10 cambio_digito = 0;
+		#30
 	
-	//Pruebo el reset
-		#20
-		reset = 0;
-		#10 reset = 1;
-	
-	//Escribo un 9
+	//Escribo una C
 		fork
 			begin
-				digito = 5'h9;
+				digito = 5'hC;
 				cambio_digito = 1;
 			end
 		join
 		#10 cambio_digito = 0;
 		
 		#30
+	//Escribo una F	
+		fork
+			begin
+				digito = 5'hA;
+				cambio_digito = 1;
+			end
+		join
+		#10 cambio_digito = 0;
+		#30
+	
+	//Pruebo el reset
+		#20
+		reset = 1;
+		#10 reset = 0;
+	
 	//Escribo una A	
 		fork
 			begin
@@ -99,16 +110,7 @@ module test_MemoriaRGB;
 		join
 		#10 cambio_digito = 0;
 		#30
-	//Escribo una A	
-		fork
-			begin
-				digito = 5'hA;
-				cambio_digito = 1;
-			end
-		join
-		#10 cambio_digito = 0;
-		#30
-	//Escribo una A para hacer q se resetee el display	
+	//Escribo una A
 		fork
 			begin
 				digito = 5'hA;
