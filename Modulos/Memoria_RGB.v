@@ -18,7 +18,7 @@ reg [2:0] sel = 0;
 		$monitor("(%6d ns)   %b   %h   %h   %h   %h", $time, sel, digito, c, d, u);
 	end	
 */
-always @(posedge clk or posedge reset) begin
+always @(posedge clk) begin
 	if( reset )	begin
 		sel <= 0;
 		u <= 5'd16;
