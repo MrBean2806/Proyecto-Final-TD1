@@ -12,7 +12,6 @@ reg [1:0] estado = 2'd0;
 //mepa q no hace falta estado, se puede usar enable para ir
 //haciendo las transiciones
 always @(posedge clk) begin
-		
 		if(estado >= 2'd2)
 			estado <= 2'd0;
 		else

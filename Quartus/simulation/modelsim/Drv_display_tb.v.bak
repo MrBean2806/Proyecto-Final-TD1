@@ -1,0 +1,33 @@
+
+`timescale 1ps / 1ps
+module Drv_display_tb  ; 
+ 
+  reg  [4:0]  d   ; 
+  wire  [6:0]  segmentos   ; 
+  reg  [4:0]  u   ; 
+  reg    clk   ; 
+  wire  [2:0]  enable   ; 
+  reg  [4:0]  c   ; 
+  Drv_display  
+   DUT  ( 
+       .d (d ) ,
+      .segmentos (segmentos ) ,
+      .u (u ) ,
+      .clk (clk ) ,
+      .enable (enable ) ,
+      .c (c ) ); 
+
+
+
+// "Clock Pattern" : dutyCycle = 50
+// Start Time = 0 ps, End Time = 1 us, Period = 20 ns
+  initial
+  begin
+	  clk  = 1'b0  ;
+	 # 1000 ;
+// dumped values till 1 ns
+  end
+
+  initial
+	#2000 $stop;
+endmodule
