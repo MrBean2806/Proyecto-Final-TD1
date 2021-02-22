@@ -1,11 +1,8 @@
 module Driver_teclado(
 	input clk,		//clk de 100Hz
 	input [3:0] fila,
-	input enter,
 	output reg [3:0] col = 4'b0001,
 	output reg [4:0] digito = 5'd16,
-	//output reg [1:0] desp = 0,
-	output reg enter_sync,
 	output reg cambio_digito
 );
 reg [4:0] aux = 5'b10000;
@@ -18,7 +15,6 @@ parameter fila_1 = 4'b0001, col_1 = 4'b0001,
 		  fila_4 = 4'b1000, col_4 = 4'b1000;
 
 always @(posedge clk) begin
-	enter_sync <= enter;
 	begin
 		col <= col <<< 1;
 		if(col == 4'b1000)
