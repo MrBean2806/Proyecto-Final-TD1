@@ -3,7 +3,7 @@
 //Recibe los digitos ingresados por teclado y los junta en un numero de 3 digitos
 module Memoria_RGB(
 	input clk,
-	input reset,
+	input reset,	//reset por alto
 	input [4:0] digito,
 	input cambio_digito,
 	output reg [4:0] u = 5'd16,
@@ -17,7 +17,6 @@ reg [2:0] sel = 0;
 	//	 $monitor("(%6d ns)	digito = %h, c = %h, d = %h, u = %h, full = %b", $time, digito, c, d, u, RGB_full);
 	//end	
 
-
 always @(posedge clk) begin
 	if( reset )	begin
 		sel <= 0;
@@ -27,7 +26,7 @@ always @(posedge clk) begin
 	end
 	else begin
 	//sel aumenta cada pulso de clk
-	//cada vez q se desplazan los valores tienen q mantenerse hasta q vuelva a apretarse un boton
+	//cada vez q se desplazan los valores u,d,c tienen q mantenerse hasta q vuelva a apretarse un boton
 		case(sel)
 			3'b001: begin 	
 						u <= digito;
