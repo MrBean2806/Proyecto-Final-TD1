@@ -1,5 +1,5 @@
 // Modulo para multiplexar los display de 7 segmentos
-// Recibe el numero en bcd y el decoder lo convierte en 7segmentos
+// Recibe el numero en hex y el decoder lo convierte en 7segmentos
 
 module Drv_display(
 	input clk,
@@ -8,7 +8,7 @@ module Drv_display(
 	output [6:0] segmentos		//Digito a mostrar
 );
 
-reg [4:0] bcd = 5'd16;
+reg [4:0] hex = 5'd16;
 
 always @(posedge clk) begin
 	if(enable == 3'b100)
@@ -19,14 +19,14 @@ end
 
 always @(*) begin
 	case(enable)
-		3'b001: bcd = u;
-		3'b010: bcd = d;	
-		3'b100: bcd = c;
-		default: bcd = 5'd17;
+		3'b001: hex = u;
+		3'b010: hex = d;	
+		3'b100: hex = c;
+		default: hex = 5'd17;
 	endcase
 
 end
 
-BCD_7segmentos Decoder (.bcd(bcd), .segmentos(segmentos));
+Hex_7segmentos Decoder (.hex(hex), .segmentos(segmentos));
 
 endmodule
