@@ -103,15 +103,15 @@ GND_PLL1                     : 36        : gnd    :                   :         
 VCCA_PLL1                    : 37        : power  :                   : 1.2V    :           :                
 GNDA_PLL1                    : 38        : gnd    :                   :         :           :                
 GND                          : 39        : gnd    :                   :         :           :                
-col[0]                       : 40        : output : 3.3-V LVTTL       :         : 4         : Y              
-col[1]                       : 41        : output : 3.3-V LVTTL       :         : 4         : Y              
-col[2]                       : 42        : output : 3.3-V LVTTL       :         : 4         : Y              
-col[3]                       : 43        : output : 3.3-V LVTTL       :         : 4         : Y              
-fila[0]                      : 44        : input  : 3.3-V LVTTL       :         : 4         : Y              
-fila[1]                      : 45        : input  : 3.3-V LVTTL       :         : 4         : Y              
+GND*                         : 40        :        :                   :         : 4         :                
+GND*                         : 41        :        :                   :         : 4         :                
+GND*                         : 42        :        :                   :         : 4         :                
+GND*                         : 43        :        :                   :         : 4         :                
+GND*                         : 44        :        :                   :         : 4         :                
+GND*                         : 45        :        :                   :         : 4         :                
 VCCIO4                       : 46        : power  :                   : 3.3V    : 4         :                
-fila[2]                      : 47        : input  : 3.3-V LVTTL       :         : 4         : Y              
-fila[3]                      : 48        : input  : 3.3-V LVTTL       :         : 4         : Y              
+GND*                         : 47        :        :                   :         : 4         :                
+GND*                         : 48        :        :                   :         : 4         :                
 GND                          : 49        : gnd    :                   :         :           :                
 VCCINT                       : 50        : power  :                   : 1.2V    :           :                
 GND*                         : 51        :        :                   :         : 4         :                
@@ -175,36 +175,36 @@ GND_PLL2                     : 108       : gnd    :                   :         
 VCCA_PLL2                    : 109       : power  :                   : 1.2V    :           :                
 GNDA_PLL2                    : 110       : gnd    :                   :         :           :                
 GND                          : 111       : gnd    :                   :         :           :                
-GND*                         : 112       :        :                   :         : 2         :                
+segmentos[6]                 : 112       : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 113       :        :                   :         : 2         :                
-GND*                         : 114       :        :                   :         : 2         :                
+segmentos[5]                 : 114       : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 115       :        :                   :         : 2         :                
 VCCIO2                       : 116       : power  :                   : 3.3V    : 2         :                
 GND                          : 117       : gnd    :                   :         :           :                
-GND*                         : 118       :        :                   :         : 2         :                
+segmentos[4]                 : 118       : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 119       :        :                   :         : 2         :                
-GND*                         : 120       :        :                   :         : 2         :                
-GND*                         : 121       :        :                   :         : 2         :                
-segmentos[6]                 : 122       : output : 3.3-V LVTTL       :         : 2         : Y              
+segmentos[3]                 : 120       : output : 3.3-V LVTTL       :         : 2         : Y              
+fila[3]                      : 121       : input  : 3.3-V LVTTL       :         : 2         : Y              
+segmentos[2]                 : 122       : output : 3.3-V LVTTL       :         : 2         : Y              
 GND                          : 123       : gnd    :                   :         :           :                
 VCCINT                       : 124       : power  :                   : 1.2V    :           :                
-GND*                         : 125       :        :                   :         : 2         :                
-segmentos[5]                 : 126       : output : 3.3-V LVTTL       :         : 2         : Y              
+fila[2]                      : 125       : input  : 3.3-V LVTTL       :         : 2         : Y              
+segmentos[1]                 : 126       : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCIO2                       : 127       : power  :                   : 3.3V    : 2         :                
 GND                          : 128       : gnd    :                   :         :           :                
-GND*                         : 129       :        :                   :         : 2         :                
+fila[1]                      : 129       : input  : 3.3-V LVTTL       :         : 2         : Y              
 GND                          : 130       : gnd    :                   :         :           :                
 VCCINT                       : 131       : power  :                   : 1.2V    :           :                
-segmentos[4]                 : 132       : output : 3.3-V LVTTL       :         : 2         : Y              
-segmentos[3]                 : 133       : output : 3.3-V LVTTL       :         : 2         : Y              
+segmentos[0]                 : 132       : output : 3.3-V LVTTL       :         : 2         : Y              
+fila[0]                      : 133       : input  : 3.3-V LVTTL       :         : 2         : Y              
 enable[0]                    : 134       : output : 3.3-V LVTTL       :         : 2         : Y              
-segmentos[2]                 : 135       : output : 3.3-V LVTTL       :         : 2         : Y              
+col[3]                       : 135       : output : 3.3-V LVTTL       :         : 2         : Y              
 enable[1]                    : 136       : output : 3.3-V LVTTL       :         : 2         : Y              
-segmentos[1]                 : 137       : output : 3.3-V LVTTL       :         : 2         : Y              
+col[2]                       : 137       : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCIO2                       : 138       : power  :                   : 3.3V    : 2         :                
 enable[2]                    : 139       : output : 3.3-V LVTTL       :         : 2         : Y              
 GND                          : 140       : gnd    :                   :         :           :                
-segmentos[0]                 : 141       : output : 3.3-V LVTTL       :         : 2         : Y              
-GND*                         : 142       :        :                   :         : 2         :                
-enter                        : 143       : input  : 3.3-V LVTTL       :         : 2         : Y              
+col[1]                       : 141       : output : 3.3-V LVTTL       :         : 2         : Y              
+enter                        : 142       : input  : 3.3-V LVTTL       :         : 2         : Y              
+col[0]                       : 143       : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : 144       :        :                   :         : 2         :                

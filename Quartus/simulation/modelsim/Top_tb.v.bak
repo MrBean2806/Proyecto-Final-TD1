@@ -1,0 +1,47 @@
+
+`timescale 1ns / 1ns
+module Top_tb  ; 
+ 
+  reg  [3:0]  fila   ; 
+  wire  [2:0]  Motores   ; 
+  wire  [6:0]  segmentos   ; 
+  wire  [3:0]  col   ; 
+  reg    enter   ; 
+  reg    clk   ; 
+  wire  [2:0]  enable   ; 
+  reg    reset   ; 
+  Top  
+   DUT  ( 
+       .fila (fila ) ,
+      .Motores (Motores ) ,
+      .segmentos (segmentos ) ,
+      .col (col ) ,
+      .enter (enter ) ,
+      .clk (clk ) ,
+      .enable (enable ) ,
+      .reset (reset ) ); 
+
+
+
+// "Clock Pattern" : dutyCycle = 50
+// Start Time = 0 ns, End Time = 1 us, Period = 20 ns
+  initial
+  begin
+	  clk  = 1'b0  ;
+	 # 10 ;
+// 10 ns, single loop till start period.
+   repeat(49)
+   begin
+	   clk  = 1'b1  ;
+	  #10  clk  = 1'b0  ;
+	  #10 ;
+// 990 ns, repeat pattern in loop.
+   end
+	  clk  = 1'b1  ;
+	 # 10 ;
+// dumped values till 1 us
+  end
+
+  initial
+	#2000 $stop;
+endmodule

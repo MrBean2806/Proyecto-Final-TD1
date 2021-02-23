@@ -1,41 +1,94 @@
 # Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
-# do Dosificador-Tintometrico_run_msim_gate_verilog.do 
-# if {[file exists gate_work]} {
-# 	vdel -lib gate_work -all
+# do Dosificador-Tintometrico_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
 # }
-# vlib gate_work
-# vmap work gate_work
+# vlib rtl_work
+# vmap work rtl_work
 # Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vlog -vlog01compat -work work +incdir+. {Dosificador-Tintometrico.vo}
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Top.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module Top
 # 
 # Top level modules:
 # 	Top
-# 
-# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/BCD_7segmentos.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Filtro_Rebote_tb
+# -- Compiling module BCD_7segmentos
 # 
 # Top level modules:
-# 	Filtro_Rebote_tb
+# 	BCD_7segmentos
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Clock_Divider.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Clock_Divider
 # 
-# vsim -t 1ps +transport_int_delays +transport_path_delays -L cycloneii_ver -L gate_work -L work -voptargs="+acc"  Filtro_Rebote_tb
-# vsim +transport_int_delays +transport_path_delays -L cycloneii_ver -L gate_work -L work -voptargs=\"+acc\" -t 1ps Filtro_Rebote_tb 
-# Loading work.Filtro_Rebote_tb
-# ** Error: (vsim-3033) C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v(11): Instantiation of 'Filtro_Rebote' failed. The design unit was not found.
+# Top level modules:
+# 	Clock_Divider
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Drv_display.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Drv_display
 # 
-#         Region: /Filtro_Rebote_tb
-#         Searched libraries:
-#             C:/altera/13.0sp1/modelsim_ase/altera/verilog/cycloneii
-#             C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
-#             C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
-#             C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
-# Error loading design
-# Error: Error loading design 
-#        Pausing macro execution 
-# MACRO ./Dosificador-Tintometrico_run_msim_gate_verilog.do PAUSED at line 12
+# Top level modules:
+# 	Drv_display
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Driver_teclado.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Driver_teclado
+# 
+# Top level modules:
+# 	Driver_teclado
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/FSM.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module FSM
+# 
+# Top level modules:
+# 	FSM
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Memoria_RGB.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Memoria_RGB
+# 
+# Top level modules:
+# 	Memoria_RGB
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Temporizador.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Temporizador
+# 
+# Top level modules:
+# 	Temporizador
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Top_tb
+# 
+# Top level modules:
+# 	Top_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  Top_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps Top_tb 
+# Loading work.Top_tb
+# Loading work.Top
+# Loading work.Clock_Divider
+# Loading work.Driver_teclado
+# Loading work.Memoria_RGB
+# Loading work.Temporizador
+# Loading work.Drv_display
+# Loading work.BCD_7segmentos
+# Loading work.FSM
+# ** Warning: (vsim-3017) C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Top.v(36): [TFMPC] - Too few port connections. Expected 7, found 6.
+# 
+#         Region: /Top_tb/DUT/fsm
+# ** Warning: (vsim-3722) C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Top.v(36): [TFMPC] - Missing connection for port 'est'.
+# 
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Break in Module Top_tb at C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v line 54
+# Simulation Breakpoint: Break in Module Top_tb at C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v line 54
+# MACRO ./Dosificador-Tintometrico_run_msim_rtl_verilog.do PAUSED at line 24
