@@ -34,49 +34,50 @@ always @(posedge clk) begin
 	end
 end
  
- initial begin
+/* initial begin
 	$monitor("(%6d ns)  aux = %h,  digito = %h", $time, aux, digito);
    end
-always @(fila, col, digito, aux) begin
+	*/
+always @(fila, col) begin
 	case(col)
 		col_1: begin
 					case(fila)
-						fila_1: aux <= 5'd1;
-						fila_2: aux <= 5'd4;
-						fila_3: aux <= 5'd7;
-						fila_4: aux <= 5'hF;
-						default: aux <= 5'd16;
+						fila_1: aux = 5'd1;
+						fila_2: aux = 5'd4;
+						fila_3: aux = 5'd7;
+						fila_4: aux = 5'hF;
+						default: aux = 5'd16;
 					endcase
 				 end
 		col_2: begin
 					case(fila)
-						fila_1: aux <= 5'd2;
-						fila_2: aux <= 5'd5;
-						fila_3: aux <= 5'd8;
-						fila_4: aux <= 5'd0;
-						default: aux <= 5'd16;
+						fila_1: aux = 5'd2;
+						fila_2: aux = 5'd5;
+						fila_3: aux = 5'd8;
+						fila_4: aux = 5'd0;
+						default: aux = 5'd16;
 					endcase
 				 end
 		col_3: begin
 					case(fila)
-						fila_1: aux <= 5'd3;
-						fila_2: aux <= 5'd6;
-						fila_3: aux <= 5'd9;
-						fila_4: aux <= 5'hE;
-						default: aux <= 5'd16;
+						fila_1: aux = 5'd3;
+						fila_2: aux = 5'd6;
+						fila_3: aux = 5'd9;
+						fila_4: aux = 5'hE;
+						default: aux = 5'd16;
 					endcase
 				 end
 		col_4: begin
 					case(fila)
-						fila_1: aux <= 5'hA;
-						fila_2: aux <= 5'hB;
-						fila_3: aux <= 5'hC;
-						fila_4: aux <= 5'hD;
-						default: aux <= 5'd16;
+						fila_1: aux = 5'hA;
+						fila_2: aux = 5'hB;
+						fila_3: aux = 5'hC;
+						fila_4: aux = 5'hD;
+						default: aux = 5'd16;
 					endcase
 				 end
 		default: begin
-					aux <= 5'b10001;
+					aux = 5'b10001;
 				 end
 	endcase
 end
