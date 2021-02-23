@@ -17,24 +17,24 @@
 # Top level modules:
 # 	Top
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Drv_display_tb
+# -- Compiling module Filtro_Rebote_tb
 # 
 # Top level modules:
-# 	Drv_display_tb
+# 	Filtro_Rebote_tb
 # 
-# vsim -t 1ps +transport_int_delays +transport_path_delays -L cycloneii_ver -L gate_work -L work -voptargs="+acc"  Drv_display_tb
-# vsim +transport_int_delays +transport_path_delays -L cycloneii_ver -L gate_work -L work -voptargs=\"+acc\" -t 1ps Drv_display_tb 
-# Loading work.Drv_display_tb
-# ** Error: (vsim-3033) C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v(18): Instantiation of 'Drv_display' failed. The design unit was not found.
+# vsim -t 1ps +transport_int_delays +transport_path_delays -L cycloneii_ver -L gate_work -L work -voptargs="+acc"  Filtro_Rebote_tb
+# vsim +transport_int_delays +transport_path_delays -L cycloneii_ver -L gate_work -L work -voptargs=\"+acc\" -t 1ps Filtro_Rebote_tb 
+# Loading work.Filtro_Rebote_tb
+# ** Error: (vsim-3033) C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v(11): Instantiation of 'Filtro_Rebote' failed. The design unit was not found.
 # 
-#         Region: /Drv_display_tb
+#         Region: /Filtro_Rebote_tb
 #         Searched libraries:
 #             C:/altera/13.0sp1/modelsim_ase/altera/verilog/cycloneii
-#             C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
-#             C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
-#             C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
+#             C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
+#             C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
+#             C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/gate_work
 # Error loading design
 # Error: Error loading design 
 #        Pausing macro execution 

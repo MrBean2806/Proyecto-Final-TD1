@@ -1,5 +1,5 @@
 Flow report for Dosificador-Tintometrico
-Fri Feb 19 22:21:58 2021
+Mon Feb 22 20:52:48 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Fri Feb 19 22:21:58 2021           ;
+; Flow Status                        ; Successful - Mon Feb 22 20:52:48 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Dosificador-Tintometrico                        ;
 ; Top-level Entity Name              ; Top                                             ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C5T144C8                                     ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 163 / 4,608 ( 4 % )                             ;
-;     Total combinational functions  ; 162 / 4,608 ( 4 % )                             ;
-;     Dedicated logic registers      ; 76 / 4,608 ( 2 % )                              ;
-; Total registers                    ; 76                                              ;
+; Total logic elements               ; 154 / 4,608 ( 3 % )                             ;
+;     Total combinational functions  ; 152 / 4,608 ( 3 % )                             ;
+;     Dedicated logic registers      ; 66 / 4,608 ( 1 % )                              ;
+; Total registers                    ; 66                                              ;
 ; Total pins                         ; 24 / 89 ( 27 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 119,808 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+--------------------------+
 ; Option            ; Setting                  ;
 +-------------------+--------------------------+
-; Start date & time ; 02/19/2021 22:21:45      ;
+; Start date & time ; 02/22/2021 20:52:39      ;
 ; Main task         ; Compilation              ;
 ; Revision Name     ; Dosificador-Tintometrico ;
 +-------------------+--------------------------+
@@ -75,20 +75,28 @@ applicable agreement for further details.
 +--------------------------------------+----------------------------------------+--------------------------+-------------+------------------+
 ; Assignment Name                      ; Value                                  ; Default Value            ; Entity Name ; Section Id       ;
 +--------------------------------------+----------------------------------------+--------------------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID                ; 4459195884143.161378410513220          ; --                       ; --          ; --               ;
+; COMPILER_SIGNATURE_ID                ; 929348529712.161403795918188           ; --                       ; --          ; --               ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --                       ; --          ; Filtro_Rebote_tb ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --                       ; --          ; Drv_display_tb   ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; Drv_display_tb                         ; --                       ; --          ; eda_simulation   ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --                       ; --          ; Drv_Teclado_tb   ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --                       ; --          ; Temporizador_tb  ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; Filtro_Rebote_tb                       ; --                       ; --          ; eda_simulation   ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --                       ; --          ; eda_simulation   ;
 ; EDA_RUN_TOOL_AUTOMATICALLY           ; Off                                    ; --                       ; --          ; eda_simulation   ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (Verilog)              ; <None>                   ; --          ; --               ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --                       ; --          ; eda_simulation   ;
 ; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/Filtro_Rebote_tb.v ; --                       ; --          ; Filtro_Rebote_tb ;
 ; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/Drv_display_tb.v   ; --                       ; --          ; Drv_display_tb   ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/Drv_Teclado_tb.v   ; --                       ; --          ; Drv_Teclado_tb   ;
+; EDA_TEST_BENCH_FILE                  ; simulation/modelsim/Temporizador_tb.v  ; --                       ; --          ; Temporizador_tb  ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; Filtro_Rebote_tb                       ; --                       ; --          ; Filtro_Rebote_tb ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; Drv_display_tb                         ; --                       ; --          ; Drv_display_tb   ;
+; EDA_TEST_BENCH_MODULE_NAME           ; Drv_Teclado_tb                         ; --                       ; --          ; Drv_Teclado_tb   ;
+; EDA_TEST_BENCH_MODULE_NAME           ; Temporizador_tb                        ; --                       ; --          ; Temporizador_tb  ;
 ; EDA_TEST_BENCH_NAME                  ; Filtro_Rebote_tb                       ; --                       ; --          ; eda_simulation   ;
 ; EDA_TEST_BENCH_NAME                  ; Drv_display_tb                         ; --                       ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; Drv_Teclado_tb                         ; --                       ; --          ; eda_simulation   ;
+; EDA_TEST_BENCH_NAME                  ; Temporizador_tb                        ; --                       ; --          ; eda_simulation   ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --                       ; --          ; eda_simulation   ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --                       ; --          ; --               ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --                       ; --          ; --               ;
@@ -107,12 +115,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4595 MB             ; 00:00:02                           ;
-; Fitter                    ; 00:00:04     ; 1.0                     ; 4803 MB             ; 00:00:04                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 4555 MB             ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4543 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4515 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:09     ; --                      ; --                  ; 00:00:09                           ;
+; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4587 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:02     ; 1.0                     ; 4803 MB             ; 00:00:02                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4547 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4535 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4507 MB             ; 00:00:00                           ;
+; Total                     ; 00:00:05     ; --                      ; --                  ; 00:00:05                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -121,11 +129,11 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; Facu-Notebook    ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; Facu-Notebook    ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; Facu-Notebook    ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; Facu-Notebook    ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; Facu-Notebook    ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; PC-Facu          ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; PC-Facu          ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; PC-Facu          ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; PC-Facu          ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; PC-Facu          ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

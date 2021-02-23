@@ -1,0 +1,50 @@
+
+`timescale 1ns / 1ns
+module Temporizador_tb  ; 
+
+parameter B_count  = 2'b10 ;
+parameter R_count  = 2'b01 ;
+parameter start  = 2'b00 ;
+parameter b  = 2'b00 ;
+parameter r  = 2'b10 ;
+parameter G_count  = 2'b11 ;
+parameter g  = 2'b01 ; 
+  wire  [2:0]  flags   ; 
+  reg  [4:0]  ciclos_B   ; 
+  reg  [4:0]  ciclos_R   ; 
+  reg    enter   ; 
+  reg    clk   ; 
+  reg  [4:0]  ciclos_G   ; 
+  Temporizador    #( B_count , R_count , start , b , r , G_count , g  )
+   DUT  ( 
+       .flags (flags ) ,
+      .ciclos_B (ciclos_B ) ,
+      .ciclos_R (ciclos_R ) ,
+      .enter (enter ) ,
+      .clk (clk ) ,
+      .ciclos_G (ciclos_G ) ); 
+
+
+
+// "Clock Pattern" : dutyCycle = 50
+// Start Time = 0 ns, End Time = 1 us, Period = 20 ns
+  initial
+  begin
+	  clk  = 1'b0  ;
+	 # 10 ;
+// 10 ns, single loop till start period.
+   repeat(49)
+   begin
+	   clk  = 1'b1  ;
+	  #10  clk  = 1'b0  ;
+	  #10 ;
+// 990 ns, repeat pattern in loop.
+   end
+	  clk  = 1'b1  ;
+	 # 10 ;
+// dumped values till 1 us
+  end
+
+  initial
+	#2000 $stop;
+endmodule

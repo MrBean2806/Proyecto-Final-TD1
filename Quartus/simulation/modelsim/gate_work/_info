@@ -2,33 +2,33 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\facun\Desktop\Proyecto-Final-TD1\Quartus\simulation\modelsim
-vDrv_display_tb
+Z0 dC:\Users\User\Desktop\Proyecto-Final-TD1\Quartus\simulation\modelsim
+vFiltro_Rebote_tb
 !i10b 1
-!s100 CAR6VQ<<8YcZKPBD89En80
-IAGf94Oc;P4mG2Rgbk[oQ<1
-V[PZ068S4ke@LOCWNooXZi2
-Z1 dC:\Users\facun\Desktop\Proyecto-Final-TD1\Quartus\simulation\modelsim
-w1613783287
-8C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v
-FC:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v
+!s100 J97:@EnhSjDKllzQ7S26L3
+I5CMBiNHnjiCI@>40cROCE3
+VTATz;bGJeWOn;<CQIfm7`3
+Z1 dC:\Users\User\Desktop\Proyecto-Final-TD1\Quartus\simulation\modelsim
+w1614020323
+8C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v
+FC:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v
 L0 3
 Z2 OV;L;10.1d;51
 r1
 !s85 0
 31
-!s108 1613784076.125000
-!s107 C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim|C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v|
+!s108 1614025817.680000
+!s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v|
 !s101 -O0
 Z3 o-vlog01compat -work work -O0
-!s92 -vlog01compat -work work +incdir+C:/Users/facun/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim -O0
-n@drv_display_tb
+!s92 -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim -O0
+n@filtro_@rebote_tb
 vTop
-I>?a::LA;?K;ElFG38SJ[f3
-V`PS5Ck2jhQD6eZXo@fiD^3
+IOK6:^^MdcVVRCKRzQXoL73
+V_[MWmoz11]DYchHKaYgU]2
 R1
-w1613784065
+w1614025516
 8Dosificador-Tintometrico.vo
 FDosificador-Tintometrico.vo
 L0 31
@@ -38,9 +38,9 @@ r1
 R3
 n@top
 !i10b 1
-!s100 i9jN7n38XJnal^5I3dook3
+!s100 eEgUdhTjg[=XYb;j3YS:23
 !s85 0
-!s108 1613784075.965000
+!s108 1614025817.568000
 !s107 Dosificador-Tintometrico.vo|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|Dosificador-Tintometrico.vo|
 !s101 -O0

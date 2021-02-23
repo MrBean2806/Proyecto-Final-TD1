@@ -3,10 +3,9 @@ module FSM(
     input reset,
     input RGB_full,
     input [2:0] flags,
-    //input cambio,
     input enter,
     output reg [2:0] Motores,
-	 output reg trigger = 1'b0
+	 output [2:0] est 
 );
     parameter r = 2'd2, g = 2'd1, b = 2'd0;
     parameter lectura = 3'b0, espera = 3'b001,
@@ -14,7 +13,7 @@ module FSM(
     
     reg [2:0] estado, estado_pos = 0;
 
-    always @ (posedge clk or negedge reset) begin
+    always @ (posedge clk, negedge reset) begin
         if( !reset )
             estado <= lectura;
         else estado <= estado_pos;
@@ -42,15 +41,15 @@ module FSM(
         case (estado)
             // 5'd16 -> display en blanco
             // 5'd17 -> guion
-            lectura:   begin Motores = 3'b000; trigger = 1'b0; end 
-            espera:    begin Motores = 3'b000; trigger = 1'b0; end 
-            carga_R:   begin Motores = 3'b100; trigger = 1'b1; end 
-            carga_Y:   begin Motores = 3'b010; trigger = 1'b1; end 
-            carga_B:   begin Motores = 3'b001; trigger = 1'b1; end 
-            default:   begin Motores = 3'b000; trigger = 1'b0; end 
+            lectura:   begin Motores = 3'b000;  end 
+            espera:    begin Motores = 3'b000;  end 
+            carga_R:   begin Motores = 3'b100;  end 
+            carga_Y:   begin Motores = 3'b010;  end 
+            carga_B:   begin Motores = 3'b001;  end 
+            default:   begin Motores = 3'b000;  end 
         endcase
         
     end
-
+assign est = estado;
 
 endmodule

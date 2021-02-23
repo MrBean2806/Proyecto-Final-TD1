@@ -3,43 +3,67 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'clk'
-Slack : -4.423
-TNS   : -237.932
+Slack : -4.271
+TNS   : -115.340
+
+Type  : Slow Model Setup 'Clock_Divider:Clk_100ms|contador[10]'
+Slack : -4.049
+TNS   : -89.390
 
 Type  : Slow Model Hold 'clk'
+Slack : -1.787
+TNS   : -9.453
+
+Type  : Slow Model Hold 'Clock_Divider:Clk_100ms|contador[10]'
 Slack : 0.499
 TNS   : 0.000
 
-Type  : Slow Model Recovery 'clk'
-Slack : -3.331
-TNS   : -56.374
+Type  : Slow Model Recovery 'Clock_Divider:Clk_100ms|contador[10]'
+Slack : -3.530
+TNS   : -54.180
 
-Type  : Slow Model Removal 'clk'
-Slack : 1.664
+Type  : Slow Model Removal 'Clock_Divider:Clk_100ms|contador[10]'
+Slack : 1.668
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clk'
 Slack : -1.941
-TNS   : -114.725
+TNS   : -43.493
+
+Type  : Slow Model Minimum Pulse Width 'Clock_Divider:Clk_100ms|contador[10]'
+Slack : -0.742
+TNS   : -56.392
 
 Type  : Fast Model Setup 'clk'
-Slack : -0.837
-TNS   : -30.211
+Slack : -0.943
+TNS   : -22.591
+
+Type  : Fast Model Setup 'Clock_Divider:Clk_100ms|contador[10]'
+Slack : -0.557
+TNS   : -7.646
 
 Type  : Fast Model Hold 'clk'
+Slack : -1.169
+TNS   : -9.622
+
+Type  : Fast Model Hold 'Clock_Divider:Clk_100ms|contador[10]'
 Slack : 0.215
 TNS   : 0.000
 
-Type  : Fast Model Recovery 'clk'
-Slack : -0.509
-TNS   : -7.994
+Type  : Fast Model Recovery 'Clock_Divider:Clk_100ms|contador[10]'
+Slack : -0.601
+TNS   : -7.456
 
-Type  : Fast Model Removal 'clk'
-Slack : 0.724
+Type  : Fast Model Removal 'Clock_Divider:Clk_100ms|contador[10]'
+Slack : 0.726
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'clk'
 Slack : -1.380
-TNS   : -77.380
+TNS   : -29.380
+
+Type  : Fast Model Minimum Pulse Width 'Clock_Divider:Clk_100ms|contador[10]'
+Slack : -0.500
+TNS   : -38.000
 
 ------------------------------------------------------------

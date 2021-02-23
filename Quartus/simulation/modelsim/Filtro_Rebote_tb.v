@@ -1,13 +1,11 @@
 
-`timescale 1ns / 1ns
+`timescale 1ns / 1ps
 module Filtro_Rebote_tb  ; 
 
-parameter duracion_ms  = 50 ; 
   wire  pulso_ideal   ; 
   reg    pulso_real   ; 
   reg    clk   ; 
-  Filtro_Rebote    #( duracion_ms  )
-   DUT  ( 
+  Filtro_Rebote DUT( 
        .pulso_ideal (pulso_ideal ) ,
       .pulso_real (pulso_real ) ,
       .clk (clk ) ); 
@@ -84,8 +82,8 @@ parameter duracion_ms  = 50 ;
 	pulso_real = 1;
 	#30;
 	pulso_real = 0;
-	
-	
+	end
+	initial begin
 	#2000 $stop;
 	end
 

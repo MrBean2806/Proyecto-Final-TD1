@@ -1,6 +1,6 @@
 |Top
-clk => clk_60ms.IN6
-enter_real => enter_real.IN1
+clk => clk.IN2
+enter => enter.IN1
 reset => reset.IN1
 fila[0] => fila[0].IN1
 fila[1] => fila[1].IN1
@@ -23,6 +23,38 @@ enable[2] <= Drv_display:display.enable
 Motores[0] <= FSM:fsm.Motores
 Motores[1] <= FSM:fsm.Motores
 Motores[2] <= FSM:fsm.Motores
+
+
+|Top|Clock_Divider:Clk_100ms
+clock_in => contador[0].CLK
+clock_in => contador[1].CLK
+clock_in => contador[2].CLK
+clock_in => contador[3].CLK
+clock_in => contador[4].CLK
+clock_in => contador[5].CLK
+clock_in => contador[6].CLK
+clock_in => contador[7].CLK
+clock_in => contador[8].CLK
+clock_in => contador[9].CLK
+clock_in => contador[10].CLK
+clock_in => contador[11].CLK
+clock_in => contador[12].CLK
+clock_in => contador[13].CLK
+clock_in => contador[14].CLK
+clock_in => contador[15].CLK
+clock_in => contador[16].CLK
+clock_in => contador[17].CLK
+clock_in => contador[18].CLK
+clock_in => contador[19].CLK
+clock_in => contador[20].CLK
+clock_in => contador[21].CLK
+clock_in => contador[22].CLK
+clock_in => contador[23].CLK
+clock_in => contador[24].CLK
+clock_in => contador[25].CLK
+clock_in => contador[26].CLK
+clock_in => contador[27].CLK
+clock_out <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Top|Driver_teclado:teclado
@@ -125,8 +157,8 @@ clk => contador[1].CLK
 clk => contador[2].CLK
 clk => contador[3].CLK
 clk => RGB_count~5.DATAIN
-trigger => Selector1.IN3
-trigger => Selector0.IN0
+enter => Selector1.IN3
+enter => Selector0.IN0
 ciclos_R[0] => LessThan0.IN6
 ciclos_R[1] => LessThan0.IN5
 ciclos_R[2] => LessThan0.IN4
@@ -192,44 +224,6 @@ segmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 segmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Top|Filtro_Rebote:filtro_enter
-clk => pulso_ideal~reg0.CLK
-clk => counter[0].CLK
-clk => counter[1].CLK
-clk => counter[2].CLK
-clk => counter[3].CLK
-clk => counter[4].CLK
-clk => counter[5].CLK
-clk => counter[6].CLK
-clk => counter[7].CLK
-clk => counter[8].CLK
-clk => counter[9].CLK
-clk => counter[10].CLK
-clk => counter[11].CLK
-clk => counter[12].CLK
-clk => counter[13].CLK
-clk => counter[14].CLK
-clk => counter[15].CLK
-clk => counter[16].CLK
-clk => counter[17].CLK
-clk => counter[18].CLK
-clk => counter[19].CLK
-clk => counter[20].CLK
-clk => counter[21].CLK
-clk => counter[22].CLK
-clk => counter[23].CLK
-clk => counter[24].CLK
-clk => counter[25].CLK
-clk => counter[26].CLK
-clk => counter[27].CLK
-clk => counter[28].CLK
-clk => counter[29].CLK
-clk => counter[30].CLK
-clk => counter[31].CLK
-pulso_real => pulso_ideal.OUTPUTSELECT
-pulso_ideal <= pulso_ideal~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |Top|FSM:fsm
 clk => estado~1.DATAIN
 reset => estado~3.DATAIN
@@ -248,7 +242,9 @@ enter => estado_pos.DATAA
 enter => estado_pos.DATAA
 Motores[0] <= Motores[0].DB_MAX_OUTPUT_PORT_TYPE
 Motores[1] <= Motores[1].DB_MAX_OUTPUT_PORT_TYPE
-Motores[2] <= Motores[2].DB_MAX_OUTPUT_PORT_TYPE
-trigger <= trigger.DB_MAX_OUTPUT_PORT_TYPE
+Motores[2] <= est[1].DB_MAX_OUTPUT_PORT_TYPE
+est[0] <= est.DB_MAX_OUTPUT_PORT_TYPE
+est[1] <= est[1].DB_MAX_OUTPUT_PORT_TYPE
+est[2] <= est.DB_MAX_OUTPUT_PORT_TYPE
 
 
