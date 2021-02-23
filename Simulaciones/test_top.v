@@ -54,27 +54,52 @@ module test_top;
 		enter = 0;
 		reset = 1;	
 		fila = 0;
-		#60
+		#20
 		
-	//Escribo una A
+	//Escribo un 2
 		fila = 4'b0001;
 		#20
 		fila = 4'b0;
-	//Escribo una B	
+	//Escribo un 5	
 		#60
 		fila = 4'b0010;
 		#20
 		fila = 4'b0;
-	//Escribo una C
+	//Escribo un 8
 		#60
 		fila = 4'b0100;
 		#20
 		fila = 4'b0;
 	//Aprieto el enter para empezar la carga
-		#80
+		#160
 		enter = 1;
 		#20 enter = 0;
+	
+		#1000
 		
+	//Escribo 4 digitos seguidos para que se resetee el display
+		#60
+		fila = 4'b0001;
+		#20
+		fila = 4'b0;
+
+		#60
+		fila = 4'b0001;
+		#20
+		fila = 4'b0;
+		
+		#60
+		fila = 4'b0001;
+		#20
+		fila = 4'b0;
+		
+		#60
+		fila = 4'b0001;
+		#20
+		fila = 4'b0;
+		
+
+
 		
 	end
       
