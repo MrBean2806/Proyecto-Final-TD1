@@ -8,9 +8,10 @@ module Top(
     output [2:0] enable,
     output [2:0] Motores
 );
-wire cambio, RGB_full, clk_100ms, clk_400ms;
+wire cambio, RGB_full, reset_memoria, clk_100ms, clk_400ms;
 wire [2:0] flags;
 wire [4:0] digito, R, G, B;
+assign reset_memoria =  ~flags[0] & reset;	//reset por bajo
 
 assign clk_100ms = clk;
 assign clk_400ms = clk;
@@ -20,7 +21,7 @@ assign clk_400ms = clk;
 Driver_teclado teclado(.clk(clk_100ms), .fila(fila),
                     .col(col), .digito(digito), .cambio_digito(cambio));
 
-Memoria_RGB memoria_RGB(.clk(clk_100ms), .reset(flags[0]), .digito(digito), .cambio_digito(cambio),
+Memoria_RGB memoria_RGB(.clk(clk_100ms), .reset( reset_memoria ), .digito(digito), .cambio_digito(cambio),
                         .c(R), .d(G), .u(B), .RGB_full(RGB_full));
 //no hace falta otro divisor, puede usarse el clk de 100ms y contar hasta 4 pulsos
 temporizador timer(.clk(clk_100ms), .enter(enter), .reset(reset),

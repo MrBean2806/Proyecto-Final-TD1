@@ -13,13 +13,13 @@ module Memoria_RGB(
 );
 reg [2:0] sel = 0;
 
-/*initial begin
-		$display("time   sel   digito   c   d   u   ");
-		$monitor("(%6d ns)   %b   %h   %h   %h   %h", $time, sel, digito, c, d, u);
-	end	
-*/
+//initial begin
+//		$display("time   reset   sel   digito   c   d   u   ");
+//		$monitor("(%6d ns)  %b   %b   %h   %h   %h   %h", $time, reset, sel, digito, c, d, u);
+//	end	
+
 always @(posedge clk) begin
-	if( reset )	begin
+	if( !reset )	begin
 		sel <= 0;
 		u <= 5'd16;
 		d <= 5'd16;
@@ -59,6 +59,6 @@ always @(posedge clk) begin
 
 end
 
-assign RGB_full = (~u[4]) & (~d[4]) & (~c[4]); 	//es 1 cuando ninguno es 5'h10 = 5'b10000 (los MSB son 0)
+assign RGB_full = (~u[4]) & (~d[4]) & (~c[4]); 	//es 1 cuando ninguno es 5'd16 = 5'b10000 (los MSB son 0)
 
 endmodule
