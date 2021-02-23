@@ -12,7 +12,7 @@ entity Temporizador is
     );
     port(
         clk             : in     vl_logic;
-        trigger         : in     vl_logic;
+        enter           : in     vl_logic;
         ciclos_R        : in     vl_logic_vector(4 downto 0);
         ciclos_G        : in     vl_logic_vector(4 downto 0);
         ciclos_B        : in     vl_logic_vector(4 downto 0);

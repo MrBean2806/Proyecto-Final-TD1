@@ -29,11 +29,11 @@ always @(posedge clk) begin
 	end
 	else begin
 		digito <= aux;
-		cambio_digito <= !cambio_digito;
+		cambio_digito <= 1'b1;
 	end
 end
 
-always @(fila, col, digito, aux) begin
+always @(fila, col) begin
 	case(col)
 		col_1: begin
 					case(fila)
