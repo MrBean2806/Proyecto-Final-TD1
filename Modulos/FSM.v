@@ -19,7 +19,8 @@ module FSM(
     end
 
     initial begin
-        $monitor("(%6d ns)  Estado FSM = %b", $time, estado);
+        $display("tiempo   Estado FSM  r g b");
+        $monitor("(%6d ns)   %b       %b %b %b", $time, estado, flags[r], flags[g], flags[b]);
     end
 
     always @ (*)   begin
