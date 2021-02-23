@@ -13,11 +13,12 @@ module Memoria_RGB(
 );
 reg [2:0] sel = 0;
 
-//initial begin
-	//	 $monitor("(%6d ns)	digito = %h, c = %h, d = %h, u = %h, full = %b", $time, digito, c, d, u, RGB_full);
-	//end	
-
-always @(posedge clk) begin
+/*initial begin
+		$display("time   sel   digito   c   d   u   ");
+		$monitor("(%6d ns)   %b   %h   %h   %h   %h", $time, sel, digito, c, d, u);
+	end	
+*/
+always @(posedge clk or posedge reset) begin
 	if( reset )	begin
 		sel <= 0;
 		u <= 5'd16;

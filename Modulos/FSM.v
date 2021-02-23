@@ -3,7 +3,6 @@ module FSM(
     input reset,
     input RGB_full,
     input [2:0] flags,
-    //input cambio,
     input enter,
     output reg [2:0] Motores
 );

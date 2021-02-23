@@ -33,7 +33,10 @@ always @(posedge clk) begin
 		cambio_digito <= 1'b1;
 	end
 end
-
+ 
+ initial begin
+	$monitor("(%6d ns)  aux = %h,  digito = %h", $time, aux, digito);
+   end
 always @(fila, col, digito, aux) begin
 	case(col)
 		col_1: begin
