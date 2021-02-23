@@ -12,7 +12,7 @@ module FSM(
     
     reg [2:0] estado, estado_pos = 0;
 
-    always @ (posedge clk or negedge reset) begin
+    always @ (posedge clk) begin
         if( !reset )
             estado <= lectura;
         else estado <= estado_pos;
