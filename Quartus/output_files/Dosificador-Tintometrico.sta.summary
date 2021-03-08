@@ -3,67 +3,115 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'clk'
-Slack : -4.271
-TNS   : -115.340
+Slack : -4.806
+TNS   : -416.836
 
-Type  : Slow Model Setup 'Clock_Divider:Clk_100ms|contador[10]'
-Slack : -4.049
-TNS   : -89.390
+Type  : Slow Model Setup 'Clock_Divider:Clk_400ms|contador[10]'
+Slack : -3.956
+TNS   : -28.717
+
+Type  : Slow Model Setup 'Clock_Divider:Clk_20ms|contador[10]'
+Slack : -1.930
+TNS   : -11.418
+
+Type  : Slow Model Setup 'Clock_Divider:Clk_2ms|contador[10]'
+Slack : -0.942
+TNS   : -1.306
+
+Type  : Slow Model Hold 'Clock_Divider:Clk_400ms|contador[10]'
+Slack : -3.183
+TNS   : -20.900
 
 Type  : Slow Model Hold 'clk'
-Slack : -1.787
-TNS   : -9.453
+Slack : -1.806
+TNS   : -38.601
 
-Type  : Slow Model Hold 'Clock_Divider:Clk_100ms|contador[10]'
+Type  : Slow Model Hold 'Clock_Divider:Clk_2ms|contador[10]'
 Slack : 0.499
 TNS   : 0.000
 
-Type  : Slow Model Recovery 'Clock_Divider:Clk_100ms|contador[10]'
-Slack : -3.530
-TNS   : -54.180
+Type  : Slow Model Hold 'Clock_Divider:Clk_20ms|contador[10]'
+Slack : 0.796
+TNS   : 0.000
 
-Type  : Slow Model Removal 'Clock_Divider:Clk_100ms|contador[10]'
-Slack : 1.668
+Type  : Slow Model Recovery 'clk'
+Slack : -8.554
+TNS   : -144.533
+
+Type  : Slow Model Removal 'clk'
+Slack : 1.654
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clk'
 Slack : -1.941
-TNS   : -43.493
+TNS   : -153.309
 
-Type  : Slow Model Minimum Pulse Width 'Clock_Divider:Clk_100ms|contador[10]'
+Type  : Slow Model Minimum Pulse Width 'Clock_Divider:Clk_20ms|contador[10]'
 Slack : -0.742
-TNS   : -56.392
+TNS   : -14.840
+
+Type  : Slow Model Minimum Pulse Width 'Clock_Divider:Clk_400ms|contador[10]'
+Slack : -0.742
+TNS   : -11.872
+
+Type  : Slow Model Minimum Pulse Width 'Clock_Divider:Clk_2ms|contador[10]'
+Slack : -0.742
+TNS   : -2.968
 
 Type  : Fast Model Setup 'clk'
-Slack : -0.943
-TNS   : -22.591
+Slack : -1.079
+TNS   : -69.459
 
-Type  : Fast Model Setup 'Clock_Divider:Clk_100ms|contador[10]'
-Slack : -0.557
-TNS   : -7.646
+Type  : Fast Model Setup 'Clock_Divider:Clk_400ms|contador[10]'
+Slack : -0.567
+TNS   : -3.457
+
+Type  : Fast Model Setup 'Clock_Divider:Clk_20ms|contador[10]'
+Slack : 0.021
+TNS   : 0.000
+
+Type  : Fast Model Setup 'Clock_Divider:Clk_2ms|contador[10]'
+Slack : 0.325
+TNS   : 0.000
 
 Type  : Fast Model Hold 'clk'
-Slack : -1.169
-TNS   : -9.622
+Slack : -1.190
+TNS   : -36.832
 
-Type  : Fast Model Hold 'Clock_Divider:Clk_100ms|contador[10]'
+Type  : Fast Model Hold 'Clock_Divider:Clk_400ms|contador[10]'
+Slack : -0.716
+TNS   : -4.549
+
+Type  : Fast Model Hold 'Clock_Divider:Clk_2ms|contador[10]'
 Slack : 0.215
 TNS   : 0.000
 
-Type  : Fast Model Recovery 'Clock_Divider:Clk_100ms|contador[10]'
-Slack : -0.601
-TNS   : -7.456
+Type  : Fast Model Hold 'Clock_Divider:Clk_20ms|contador[10]'
+Slack : 0.263
+TNS   : 0.000
 
-Type  : Fast Model Removal 'Clock_Divider:Clk_100ms|contador[10]'
-Slack : 0.726
+Type  : Fast Model Recovery 'clk'
+Slack : -1.926
+TNS   : -31.626
+
+Type  : Fast Model Removal 'clk'
+Slack : 0.719
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'clk'
 Slack : -1.380
-TNS   : -29.380
+TNS   : -103.380
 
-Type  : Fast Model Minimum Pulse Width 'Clock_Divider:Clk_100ms|contador[10]'
+Type  : Fast Model Minimum Pulse Width 'Clock_Divider:Clk_20ms|contador[10]'
 Slack : -0.500
-TNS   : -38.000
+TNS   : -10.000
+
+Type  : Fast Model Minimum Pulse Width 'Clock_Divider:Clk_400ms|contador[10]'
+Slack : -0.500
+TNS   : -8.000
+
+Type  : Fast Model Minimum Pulse Width 'Clock_Divider:Clk_2ms|contador[10]'
+Slack : -0.500
+TNS   : -2.000
 
 ------------------------------------------------------------

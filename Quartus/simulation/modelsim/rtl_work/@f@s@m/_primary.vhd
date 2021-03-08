@@ -18,7 +18,7 @@ entity FSM is
         flags           : in     vl_logic_vector(2 downto 0);
         enter           : in     vl_logic;
         Motores         : out    vl_logic_vector(2 downto 0);
-        trigger         : out    vl_logic
+        est             : out    vl_logic_vector(2 downto 0)
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of r : constant is 1;

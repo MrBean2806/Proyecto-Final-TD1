@@ -11,29 +11,25 @@ module Top(
 	);
 	
 
-wire enter_sync, cambio, RGB_full, clk_100ms, clk_400ms;
+wire enter_sync, cambio, RGB_full, clk_400ms,clk_20ms,clk_2ms;
 wire [2:0] flags;
 wire [4:0] digito, R, G, B;
 
-//always @(posedge clk) begin
-//    col <= col_;
-//end
+Clock_Divider #20000000 Clk_400ms(.clock_in(clk), .clock_out(clk_400ms));
+Clock_Divider #1000000 Clk_20ms(.clock_in(clk), .clock_out(clk_20ms));
+Clock_Divider #100000 Clk_2ms(.clock_in(clk), .clock_out(clk_2ms));
 
-//assign clk_60ms = clk;
-assign clk_400ms = clk;
-Clock_Divider #5_000_000 Clk_100ms(.clock_in(clk), .clock_out(clk_100ms));
-//Clock_Divider #20000000 Clk_400ms(.clock_in(clk), .clock_out(clk_400ms));
 
-Driver_teclado teclado(.clk(clk_100ms), .fila(fila),
+Driver_teclado teclado(.clk(clk_20ms), .fila(fila),
                     .col(col), .digito(digito), .cambio_digito(cambio));
 
-Memoria_RGB memoria_RGB(.clk(clk_100ms), .reset(flags[0]), .digito(digito), .cambio_digito(cambio),
+Memoria_RGB memoria_RGB(.clk(clk), .reset(flags[0]), .digito(digito), .cambio_digito(cambio),
                         .c(R), .d(G), .u(B), .RGB_full(RGB_full));
-//no hace falta otro divisor, puede usarse el clk de 100ms y contar hasta 4 pulsos
-Temporizador timer(.clk(clk_100ms), .enter(enter),
+								
+Temporizador timer(.clk(clk_400ms), .enter(enter),
                    .ciclos_R(R), .ciclos_G(G), .ciclos_B(B), .flags(flags) );
 
-Drv_display display(.clk(clk_100ms), .c(R), .d(G), .u(B),
+Drv_display display(.clk(clk_2ms), .c(R), .d(G), .u(B),
                     .enable(enable), .segmentos(segmentos));    
                                   
 FSM fsm(.clk(clk), .reset(reset), .RGB_full(RGB_full),
