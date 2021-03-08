@@ -1,0 +1,136 @@
+module Driver_teclado(
+	input clk,		//clk de 100Hz
+	input [3:0] fila,
+	output [3:0] col,
+	output reg [4:0] digito = 5'd16,
+	output reg cambio_digito = 0
+);
+
+parameter suelto = 2'b00, guardado = 2'b01, espera = 2'b11, asignacion = 2'b10;
+ 
+reg [4:0] aux = 5'd16;
+reg [4:0] temp = 5'd16;
+//reg [1:0] state = 2'b00;
+//reg [1:0] nextState = 2'b00;
+reg flag = 0;
+reg [3:0] col_ = 4'b0001;	//no invertido
+//las filas estan invertidas pq un 0 significa q esta apretado el boton
+
+parameter fila_1 = 4'b1110, col_1 = 4'b0001,
+		  fila_2 = 4'b1101, col_2 = 4'b0010,
+		  fila_3 = 4'b1011, col_3 = 4'b0100,
+		  fila_4 = 4'b0111, col_4 = 4'b1000;
+
+always @(posedge clk) begin
+	begin
+		col_ <= col_ <<< 1;
+		if(col_ == 4'b1000)
+			col_ <= 4'b0001;
+	end
+end
+assign col = ~col_;
+//La tecla esta presionada cuando esta en bajo
+/*
+	always @(posedge clk) begin
+		state <= nextState;
+	end
+ 
+ always @(posedge clk) begin
+	case(state)
+		suelto: begin
+					cambio_digito = 0;
+					if( fila != 4'b1111) nextState = guardado;
+					else nextState = nextState;
+				end
+		guardado: begin
+					temp = aux;
+					nextState = espera;
+				  end
+		espera: if(fila == 4'b1111) nextState = asignacion;
+				else nextState = nextState;
+		asignacion: begin
+						digito = temp;
+						cambio_digito = 1;
+						nextState = suelto;
+					end
+	endcase
+
+*/
+
+always@(posedge clk) begin
+	//no hay teclas apretadas
+	if(fila == 4'b1111) begin
+	//se asigna el valor guardado del boton recien cuando se suelta
+		digito <= temp;
+		if(flag)  begin
+			cambio_digito <= 1;
+			flag <= 0;
+		end else begin
+			cambio_digito <= 0;
+			flag <= flag;
+		end
+	end
+	else begin
+	//cuando se aprieta por 1ra vez el boton se guarda su valor una sola vez
+		if(!flag)  begin
+			temp <= aux;
+			flag <= 1;
+		end else begin
+			temp <= temp;
+			flag <= flag;
+		end
+	end
+
+
+end
+
+initial begin
+	$display(" time  digito temp flag cambio");
+	$monitor("(%6d ns)   %h  %h  %b  %b", $time, digito, temp, flag, cambio_digito);
+end
+
+always @(fila, col_) begin
+	case(col_)
+		col_1: begin
+					case(fila)
+						fila_1: aux = 5'd1;
+						fila_2: aux = 5'd4;
+						fila_3: aux = 5'd7;
+						fila_4: aux = 5'hF;
+						default: aux = 5'd16;
+					endcase
+				 end
+		col_2: begin
+					case(fila)
+						fila_1: aux = 5'd2;
+						fila_2: aux = 5'd5;
+						fila_3: aux = 5'd8;
+						fila_4: aux = 5'd0;
+						default: aux = 5'd16;
+					endcase
+				 end
+		col_3: begin
+					case(fila)
+						fila_1: aux = 5'd3;
+						fila_2: aux = 5'd6;
+						fila_3: aux = 5'd9;
+						fila_4: aux = 5'hE;
+						default: aux = 5'd16;
+					endcase
+				 end
+		col_4: begin
+					case(fila)
+						fila_1: aux = 5'hA;
+						fila_2: aux = 5'hB;
+						fila_3: aux = 5'hC;
+						fila_4: aux = 5'hD;
+						default: aux = 5'd16;
+					endcase
+				 end
+		default: begin
+					aux = 5'b10001;
+				 end
+	endcase
+end
+
+endmodule
