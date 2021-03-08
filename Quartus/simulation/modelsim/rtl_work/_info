@@ -20,30 +20,9 @@ n@b@c@d_7segmentos
 !i10b 1
 !s100 146O^ZzK@4;PFl6d=KYYT3
 !s85 0
-!s108 1614089820.679000
+!s108 1614111603.439000
 !s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/BCD_7segmentos.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/BCD_7segmentos.v|
-!s101 -O0
-vClock_Divider
-IUMf=CH@G;Jjl0B>ZKj7e[3
-V5d_6cQ7MfULTcQ8Bze0de3
-R1
-w1614085953
-8C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Clock_Divider.v
-FC:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Clock_Divider.v
-L0 2
-R3
-r1
-31
-R4
-R5
-n@clock_@divider
-!i10b 1
-!s100 3>O^fZ6>@B@5bf83IlLzA1
-!s85 0
-!s108 1614089820.772000
-!s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Clock_Divider.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Clock_Divider.v|
 !s101 -O0
 vDriver_teclado
 Ik>PR1E0ZIOi<;]5N[UNz_3
@@ -62,7 +41,7 @@ n@driver_teclado
 !i10b 1
 !s100 g>9DnP4o7ffh9mLb3TH?83
 !s85 0
-!s108 1614089820.897000
+!s108 1614111603.683000
 !s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Driver_teclado.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Driver_teclado.v|
 !s101 -O0
@@ -83,18 +62,39 @@ n@drv_display
 !i10b 1
 !s100 d;@gME[KC_T9jf6c0]K=_1
 !s85 0
-!s108 1614089820.835000
+!s108 1614111603.567000
 !s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Drv_display.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Drv_display.v|
 !s101 -O0
+vDrv_display_tb
+!i10b 1
+!s100 E1h[g8P4ngifTmeFSRA?61
+IAnMi9S3P<[kATOo?gCbnR1
+V[PZ068S4ke@LOCWNooXZi2
+R1
+R2
+8C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v
+FC:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1614111604.206000
+!s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v|
+!s101 -O0
+R4
+!s92 -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim -O0
+n@drv_display_tb
 vFSM
-IQJBi^hYEezH_4E9e6z:;<3
+I3C^=E4@@DPB2KLM?CcJD31
 Vjo_R?PWOem5:gS0<:R=bX0
 R1
-w1614025430
+w1614111324
 8C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/FSM.v
 FC:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/FSM.v
-L0 1
+L0 2
 R3
 r1
 31
@@ -102,17 +102,17 @@ R4
 R5
 n@f@s@m
 !i10b 1
-!s100 fUPVhfMb]a=3CHh7cGY7o0
+!s100 1VRziVi<7OOoCkLh_]VDT1
 !s85 0
-!s108 1614089820.976000
+!s108 1614111603.814000
 !s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/FSM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/FSM.v|
 !s101 -O0
 vMemoria_RGB
-I=zB0RbMlJ7`aziQi1b[KK3
+IDTFW<b[6PD1E87>9faAHd1
 VWf@]bckNl4@3@kYAMb9Zl0
 R1
-R2
+w1614101195
 8C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Memoria_RGB.v
 FC:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Memoria_RGB.v
 L0 4
@@ -123,9 +123,9 @@ R4
 R5
 n@memoria_@r@g@b
 !i10b 1
-!s100 lSnb[eOhOnJkRnUgRm37;0
+!s100 K]W4EH]34WiSmOjf5UK7^0
 !s85 0
-!s108 1614089821.038000
+!s108 1614111603.940000
 !s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Memoria_RGB.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Memoria_RGB.v|
 !s101 -O0
@@ -146,15 +146,15 @@ n@temporizador
 !i10b 1
 !s100 KJc[9YH2fg5X9;i>4>[G00
 !s85 0
-!s108 1614089821.116000
+!s108 1614111604.091000
 !s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Temporizador.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Temporizador.v|
 !s101 -O0
 vTop
-I^jgg4DBF3ETd4NTmjE56Q0
+Ik9`KMkd[7NAOGSmTf@@ji0
 V_[MWmoz11]DYchHKaYgU]2
 R1
-w1614086672
+w1614107536
 8C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Top.v
 FC:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Top.v
 L0 2
@@ -165,30 +165,9 @@ R4
 n@top
 R5
 !i10b 1
-!s100 ;:A>R?XacS1?<zL`UNe[02
+!s100 _keFgUAld5gF3nNZN6VAb3
 !s85 0
-!s108 1614089820.601000
+!s108 1614111603.305000
 !s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Top.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Top.v|
 !s101 -O0
-vTop_tb
-!i10b 1
-!s100 W^^JP?eL3oCa`90W_E3mE3
-IJI3@[`zSgiVTdYK3hh@N^2
-V>ESGj[0fa@iCKo[2X5;m]0
-R1
-w1614089790
-8C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v
-FC:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v
-L0 3
-R3
-r1
-!s85 0
-31
-!s108 1614089821.179000
-!s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v|
-!s101 -O0
-R4
-!s92 -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim -O0
-n@top_tb

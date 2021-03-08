@@ -6,6 +6,7 @@ module Driver_teclado(
 	output reg cambio_digito
 );
 reg [4:0] aux = 5'b10000;
+reg [1:0] estado = 2'd0;
 //reg [3:0] counter = 0;
 
 //Cuando el bit de alguna posicion está en 1, significa q esa tecla esta presionada
@@ -15,10 +16,7 @@ parameter fila_1 = 4'b0001, col_1 = 4'b0001,
 		  fila_4 = 4'b1000, col_4 = 4'b1000;
 
 always @(posedge clk) begin
-	if(col == 4'b1000)
-		col <= 4'b0001;
-	else
-		col <= col <<< 1;
+	estado <= estado + 2'd1;
 end
 
 always @(posedge clk) begin
@@ -33,9 +31,10 @@ always @(posedge clk) begin
 	end
 end
 
-always @(fila, col) begin
-	case(col)
-		col_1: begin
+always @(*) begin
+	case(estado)
+		2'd0: begin
+					col <= col_1;
 					case(fila)
 						fila_1: aux <= 5'd1;
 						fila_2: aux <= 5'd4;
@@ -44,7 +43,8 @@ always @(fila, col) begin
 						default: aux <= 5'd16;
 					endcase
 				 end
-		col_2: begin
+		2'd1: begin
+					col <= col_2;
 					case(fila)
 						fila_1: aux <= 5'd2;
 						fila_2: aux <= 5'd5;
@@ -53,7 +53,8 @@ always @(fila, col) begin
 						default: aux <= 5'd16;
 					endcase
 				 end
-		col_3: begin
+		2'd2: begin
+					col <= col_3;
 					case(fila)
 						fila_1: aux <= 5'd3;
 						fila_2: aux <= 5'd6;
@@ -62,7 +63,8 @@ always @(fila, col) begin
 						default: aux <= 5'd16;
 					endcase
 				 end
-		col_4: begin
+		2'd3: begin
+					col <= col_4;
 					case(fila)
 						fila_1: aux <= 5'hA;
 						fila_2: aux <= 5'hB;
@@ -72,7 +74,7 @@ always @(fila, col) begin
 					endcase
 				 end
 		default: begin
-					aux <= 5'b10001;
+					aux <= 5'd5;
 				 end
 	endcase
 end

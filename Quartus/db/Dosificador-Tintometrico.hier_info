@@ -1,7 +1,7 @@
 |Top
-clk => clk.IN5
-enter => enter.IN1
-reset => reset.IN1
+clk => clk.IN2
+enter => ~NO_FANOUT~
+reset => ~NO_FANOUT~
 fila[0] => fila[0].IN1
 fila[1] => fila[1].IN1
 fila[2] => fila[2].IN1
@@ -20,41 +20,7 @@ segmentos[6] <= Drv_display:display.segmentos
 enable[0] <= Drv_display:display.enable
 enable[1] <= Drv_display:display.enable
 enable[2] <= Drv_display:display.enable
-Motores[0] <= FSM:fsm.Motores
-Motores[1] <= FSM:fsm.Motores
-Motores[2] <= FSM:fsm.Motores
-
-
-|Top|Clock_Divider:Clk_400ms
-clock_in => contador[0].CLK
-clock_in => contador[1].CLK
-clock_in => contador[2].CLK
-clock_in => contador[3].CLK
-clock_in => contador[4].CLK
-clock_in => contador[5].CLK
-clock_in => contador[6].CLK
-clock_in => contador[7].CLK
-clock_in => contador[8].CLK
-clock_in => contador[9].CLK
-clock_in => contador[10].CLK
-clock_in => contador[11].CLK
-clock_in => contador[12].CLK
-clock_in => contador[13].CLK
-clock_in => contador[14].CLK
-clock_in => contador[15].CLK
-clock_in => contador[16].CLK
-clock_in => contador[17].CLK
-clock_in => contador[18].CLK
-clock_in => contador[19].CLK
-clock_in => contador[20].CLK
-clock_in => contador[21].CLK
-clock_in => contador[22].CLK
-clock_in => contador[23].CLK
-clock_in => contador[24].CLK
-clock_in => contador[25].CLK
-clock_in => contador[26].CLK
-clock_in => contador[27].CLK
-clock_out <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+cambio <= Driver_teclado:teclado.cambio_digito
 
 
 |Top|Clock_Divider:Clk_20ms
@@ -128,119 +94,26 @@ clk => digito[1]~reg0.CLK
 clk => digito[2]~reg0.CLK
 clk => digito[3]~reg0.CLK
 clk => digito[4]~reg0.CLK
-clk => col[0]~reg0.CLK
-clk => col[1]~reg0.CLK
-clk => col[2]~reg0.CLK
-clk => col[3]~reg0.CLK
+clk => estado[0].CLK
+clk => estado[1].CLK
 fila[0] => Decoder0.IN3
-fila[0] => Equal1.IN3
+fila[0] => Equal0.IN3
 fila[1] => Decoder0.IN2
-fila[1] => Equal1.IN2
+fila[1] => Equal0.IN2
 fila[2] => Decoder0.IN1
-fila[2] => Equal1.IN1
+fila[2] => Equal0.IN1
 fila[3] => Decoder0.IN0
-fila[3] => Equal1.IN0
-col[0] <= col[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-col[1] <= col[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-col[2] <= col[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-col[3] <= col[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+fila[3] => Equal0.IN0
+col[0] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+col[1] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+col[2] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+col[3] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
 digito[0] <= digito[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 digito[1] <= digito[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 digito[2] <= digito[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 digito[3] <= digito[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 digito[4] <= digito[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 cambio_digito <= cambio_digito~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Top|Memoria_RGB:memoria_RGB
-clk => c[0]~reg0.CLK
-clk => c[1]~reg0.CLK
-clk => c[2]~reg0.CLK
-clk => c[3]~reg0.CLK
-clk => c[4]~reg0.CLK
-clk => d[0]~reg0.CLK
-clk => d[1]~reg0.CLK
-clk => d[2]~reg0.CLK
-clk => d[3]~reg0.CLK
-clk => d[4]~reg0.CLK
-clk => u[0]~reg0.CLK
-clk => u[1]~reg0.CLK
-clk => u[2]~reg0.CLK
-clk => u[3]~reg0.CLK
-clk => u[4]~reg0.CLK
-clk => sel[0].CLK
-clk => sel[1].CLK
-clk => sel[2].CLK
-reset => c[0]~reg0.ACLR
-reset => c[1]~reg0.ACLR
-reset => c[2]~reg0.ACLR
-reset => c[3]~reg0.ACLR
-reset => c[4]~reg0.PRESET
-reset => d[0]~reg0.ACLR
-reset => d[1]~reg0.ACLR
-reset => d[2]~reg0.ACLR
-reset => d[3]~reg0.ACLR
-reset => d[4]~reg0.PRESET
-reset => u[0]~reg0.ACLR
-reset => u[1]~reg0.ACLR
-reset => u[2]~reg0.ACLR
-reset => u[3]~reg0.ACLR
-reset => u[4]~reg0.PRESET
-reset => sel[0].ACLR
-reset => sel[1].ACLR
-reset => sel[2].ACLR
-digito[0] => u[0]~reg0.DATAIN
-digito[1] => u[1]~reg0.DATAIN
-digito[2] => u[2]~reg0.DATAIN
-digito[3] => u[3]~reg0.DATAIN
-digito[4] => u[4]~reg0.DATAIN
-cambio_digito => sel.OUTPUTSELECT
-cambio_digito => sel.OUTPUTSELECT
-cambio_digito => sel.OUTPUTSELECT
-u[0] <= u[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-u[1] <= u[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-u[2] <= u[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-u[3] <= u[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-u[4] <= u[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d[0] <= d[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d[1] <= d[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d[2] <= d[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d[3] <= d[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-d[4] <= d[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-c[0] <= c[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-c[1] <= c[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-c[2] <= c[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-c[3] <= c[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-c[4] <= c[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-RGB_full <= RGB_full.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Top|Temporizador:timer
-clk => contador[0].CLK
-clk => contador[1].CLK
-clk => contador[2].CLK
-clk => contador[3].CLK
-clk => RGB_count~5.DATAIN
-enter => Selector1.IN3
-enter => Selector0.IN0
-ciclos_R[0] => LessThan0.IN6
-ciclos_R[1] => LessThan0.IN5
-ciclos_R[2] => LessThan0.IN4
-ciclos_R[3] => LessThan0.IN3
-ciclos_R[4] => LessThan0.IN2
-ciclos_G[0] => LessThan1.IN6
-ciclos_G[1] => LessThan1.IN5
-ciclos_G[2] => LessThan1.IN4
-ciclos_G[3] => LessThan1.IN3
-ciclos_G[4] => LessThan1.IN2
-ciclos_B[0] => LessThan2.IN6
-ciclos_B[1] => LessThan2.IN5
-ciclos_B[2] => LessThan2.IN4
-ciclos_B[3] => LessThan2.IN3
-ciclos_B[4] => LessThan2.IN2
-flags[0] <= LessThan2.DB_MAX_OUTPUT_PORT_TYPE
-flags[1] <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
-flags[2] <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Top|Drv_display:display
@@ -286,29 +159,5 @@ segmentos[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
 segmentos[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
 segmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 segmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|Top|FSM:fsm
-clk => estado~1.DATAIN
-reset => estado~3.DATAIN
-RGB_full => Selector1.IN3
-RGB_full => estado_pos.OUTPUTSELECT
-RGB_full => estado_pos.OUTPUTSELECT
-RGB_full => Selector0.IN1
-RGB_full => Selector0.IN2
-flags[0] => Selector0.IN4
-flags[0] => Selector4.IN1
-flags[1] => Selector4.IN3
-flags[1] => Selector3.IN1
-flags[2] => Selector3.IN3
-flags[2] => Selector2.IN2
-enter => estado_pos.DATAA
-enter => estado_pos.DATAA
-Motores[0] <= Motores[0].DB_MAX_OUTPUT_PORT_TYPE
-Motores[1] <= Motores[1].DB_MAX_OUTPUT_PORT_TYPE
-Motores[2] <= est[1].DB_MAX_OUTPUT_PORT_TYPE
-est[0] <= est.DB_MAX_OUTPUT_PORT_TYPE
-est[1] <= est[1].DB_MAX_OUTPUT_PORT_TYPE
-est[2] <= est.DB_MAX_OUTPUT_PORT_TYPE
 
 

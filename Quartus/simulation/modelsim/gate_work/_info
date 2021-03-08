@@ -3,45 +3,45 @@ K3
 13
 cModel Technology
 Z0 dC:\Users\User\Desktop\Proyecto-Final-TD1\Quartus\simulation\modelsim
-vFiltro_Rebote_tb
-!i10b 1
-!s100 J97:@EnhSjDKllzQ7S26L3
-I5CMBiNHnjiCI@>40cROCE3
-VTATz;bGJeWOn;<CQIfm7`3
-Z1 dC:\Users\User\Desktop\Proyecto-Final-TD1\Quartus\simulation\modelsim
-w1614020323
-8C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v
-FC:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v
-L0 3
-Z2 OV;L;10.1d;51
-r1
-!s85 0
-31
-!s108 1614025817.680000
-!s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Filtro_Rebote_tb.v|
-!s101 -O0
-Z3 o-vlog01compat -work work -O0
-!s92 -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim -O0
-n@filtro_@rebote_tb
 vTop
-IOK6:^^MdcVVRCKRzQXoL73
+IK`?kY[>o]Y`>SM=91^ihA3
 V_[MWmoz11]DYchHKaYgU]2
-R1
-w1614025516
+Z1 dC:\Users\User\Desktop\Proyecto-Final-TD1\Quartus\simulation\modelsim
+w1614107549
 8Dosificador-Tintometrico.vo
 FDosificador-Tintometrico.vo
 L0 31
-R2
+Z2 OV;L;10.1d;51
 r1
 31
-R3
+Z3 o-vlog01compat -work work -O0
 n@top
 !i10b 1
-!s100 eEgUdhTjg[=XYb;j3YS:23
+!s100 Uk;A[T9kQ^NaUfR?KYoPm0
 !s85 0
-!s108 1614025817.568000
+!s108 1614107948.644000
 !s107 Dosificador-Tintometrico.vo|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+.|Dosificador-Tintometrico.vo|
 !s101 -O0
 !s92 -vlog01compat -work work +incdir+. -O0
+vTop_tb
+!i10b 1
+!s100 I9aUQk<;7boG8loQaU12R1
+IdXIl^_i7XV58>]EC=1jCR2
+V>ESGj[0fa@iCKo[2X5;m]0
+R1
+w1614107592
+8C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v
+FC:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v
+L0 3
+R2
+r1
+!s85 0
+31
+!s108 1614107948.747000
+!s107 C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim|C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v|
+!s101 -O0
+R3
+!s92 -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim -O0
+n@top_tb

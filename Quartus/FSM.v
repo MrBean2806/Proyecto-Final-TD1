@@ -1,3 +1,4 @@
+
 module FSM(
     input clk,
     input reset,
@@ -18,10 +19,11 @@ module FSM(
             estado <= lectura;
         else estado <= estado_pos;
     end
-//
-//    initial begin
-//        $monitor("(%6d ns)  Estado FSM = %b", $time, estado);
-//    end
+
+    initial begin
+        $display("tiempo   Estado FSM  r g b");
+        $monitor("(%6d ns)   %b       %b %b %b", $time, estado, flags[r], flags[g], flags[b]);
+    end
 
     always @ (*)   begin
         case(estado)
@@ -41,12 +43,12 @@ module FSM(
         case (estado)
             // 5'd16 -> display en blanco
             // 5'd17 -> guion
-            lectura:   begin Motores = 3'b000;  end 
-            espera:    begin Motores = 3'b000;  end 
-            carga_R:   begin Motores = 3'b100;  end 
-            carga_Y:   begin Motores = 3'b010;  end 
-            carga_B:   begin Motores = 3'b001;  end 
-            default:   begin Motores = 3'b000;  end 
+            lectura: Motores = 3'b000;
+            espera:    Motores = 3'b000;
+            carga_R:   Motores = 3'b100;
+            carga_Y:   Motores = 3'b010;
+            carga_B:   Motores = 3'b001;
+            default:   Motores = 3'b000;
         endcase
         
     end

@@ -7,7 +7,6 @@ vmap work rtl_work
 
 vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Top.v}
 vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/BCD_7segmentos.v}
-vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Clock_Divider.v}
 vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Drv_display.v}
 vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Driver_teclado.v}
 vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/FSM.v}

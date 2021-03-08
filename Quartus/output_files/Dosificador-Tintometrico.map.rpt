@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Dosificador-Tintometrico
-Tue Feb 23 11:34:11 2021
+Fri Mar 05 15:32:24 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,23 +13,15 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |Top|FSM:fsm|estado
-  9. State Machine - |Top|Temporizador:timer|RGB_count
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for User Entity Instance: Clock_Divider:Clk_400ms
- 16. Parameter Settings for User Entity Instance: Clock_Divider:Clk_20ms
- 17. Parameter Settings for User Entity Instance: Clock_Divider:Clk_2ms
- 18. Parameter Settings for User Entity Instance: Driver_teclado:teclado
- 19. Parameter Settings for User Entity Instance: Temporizador:timer
- 20. Parameter Settings for User Entity Instance: FSM:fsm
- 21. Port Connectivity Checks: "FSM:fsm"
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
- 24. Analysis & Synthesis Suppressed Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Clock_Divider:Clk_20ms
+ 11. Parameter Settings for User Entity Instance: Clock_Divider:Clk_2ms
+ 12. Parameter Settings for User Entity Instance: Driver_teclado:teclado
+ 13. Port Connectivity Checks: "Drv_display:display"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -55,16 +47,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Feb 23 11:34:11 2021           ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 05 15:32:24 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Dosificador-Tintometrico                        ;
 ; Top-level Entity Name              ; Top                                             ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 246                                             ;
-;     Total combinational functions  ; 239                                             ;
-;     Dedicated logic registers      ; 122                                             ;
-; Total registers                    ; 122                                             ;
-; Total pins                         ; 24                                              ;
+; Total logic elements               ; 137                                             ;
+;     Total combinational functions  ; 137                                             ;
+;     Dedicated logic registers      ; 66                                              ;
+; Total registers                    ; 66                                              ;
+; Total pins                         ; 22                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -178,9 +170,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Clock_Divider.v                  ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Clock_Divider.v  ;         ;
 ; Drv_display.v                    ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Drv_display.v    ;         ;
 ; Driver_teclado.v                 ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Driver_teclado.v ;         ;
-; FSM.v                            ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/FSM.v            ;         ;
-; Memoria_RGB.v                    ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Memoria_RGB.v    ;         ;
-; Temporizador.v                   ; yes             ; User Verilog HDL File  ; C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Temporizador.v   ;         ;
 +----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
 
 
@@ -189,28 +178,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 246   ;
+; Estimated Total logic elements              ; 137   ;
 ;                                             ;       ;
-; Total combinational functions               ; 239   ;
+; Total combinational functions               ; 137   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 117   ;
-;     -- 3 input functions                    ; 19    ;
-;     -- <=2 input functions                  ; 103   ;
+;     -- 4 input functions                    ; 56    ;
+;     -- 3 input functions                    ; 11    ;
+;     -- <=2 input functions                  ; 70    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 158   ;
-;     -- arithmetic mode                      ; 81    ;
+;     -- normal mode                          ; 83    ;
+;     -- arithmetic mode                      ; 54    ;
 ;                                             ;       ;
-; Total registers                             ; 122   ;
-;     -- Dedicated logic registers            ; 122   ;
+; Total registers                             ; 66    ;
+;     -- Dedicated logic registers            ; 66    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 24    ;
+; I/O pins                                    ; 22    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 102   ;
-; Total fan-out                               ; 1109  ;
-; Average fan-out                             ; 2.88  ;
+; Maximum fan-out                             ; 56    ;
+; Total fan-out                               ; 601   ;
+; Average fan-out                             ; 2.67  ;
 +---------------------------------------------+-------+
 
 
@@ -219,72 +208,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
 ; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Library Name ;
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
-; |Top                           ; 239 (3)           ; 122 (0)      ; 0           ; 0            ; 0       ; 0         ; 24   ; 0            ; |Top                                            ; work         ;
+; |Top                           ; 137 (2)           ; 66 (0)       ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |Top                                            ; work         ;
 ;    |Clock_Divider:Clk_20ms|    ; 43 (43)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Top|Clock_Divider:Clk_20ms                     ; work         ;
 ;    |Clock_Divider:Clk_2ms|     ; 43 (43)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Top|Clock_Divider:Clk_2ms                      ; work         ;
-;    |Clock_Divider:Clk_400ms|   ; 46 (46)           ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Top|Clock_Divider:Clk_400ms                    ; work         ;
-;    |Driver_teclado:teclado|    ; 28 (28)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Top|Driver_teclado:teclado                     ; work         ;
-;    |Drv_display:display|       ; 29 (14)           ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Top|Drv_display:display                        ; work         ;
-;       |BCD_7segmentos:Decoder| ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Top|Drv_display:display|BCD_7segmentos:Decoder ; work         ;
-;    |Memoria_RGB:memoria_RGB|   ; 17 (17)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Top|Memoria_RGB:memoria_RGB                    ; work         ;
-;    |Temporizador:timer|        ; 30 (30)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Top|Temporizador:timer                         ; work         ;
+;    |Driver_teclado:teclado|    ; 23 (23)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Top|Driver_teclado:teclado                     ; work         ;
+;    |Drv_display:display|       ; 26 (10)           ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Top|Drv_display:display                        ; work         ;
+;       |BCD_7segmentos:Decoder| ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Top|Drv_display:display|BCD_7segmentos:Decoder ; work         ;
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------+
-; State Machine - |Top|FSM:fsm|estado                                                            ;
-+----------------+----------------+----------------+---------------+------------+----------------+
-; Name           ; estado.carga_B ; estado.carga_Y ; estado.espera ; estado.000 ; estado.carga_R ;
-+----------------+----------------+----------------+---------------+------------+----------------+
-; estado.000     ; 0              ; 0              ; 0             ; 0          ; 0              ;
-; estado.espera  ; 0              ; 0              ; 1             ; 1          ; 0              ;
-; estado.carga_R ; 0              ; 0              ; 0             ; 1          ; 1              ;
-; estado.carga_Y ; 0              ; 1              ; 0             ; 1          ; 0              ;
-; estado.carga_B ; 1              ; 0              ; 0             ; 1          ; 0              ;
-+----------------+----------------+----------------+---------------+------------+----------------+
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------+
-; State Machine - |Top|Temporizador:timer|RGB_count                                            ;
-+-------------------+-------------------+-------------------+-------------------+--------------+
-; Name              ; RGB_count.G_count ; RGB_count.B_count ; RGB_count.R_count ; RGB_count.00 ;
-+-------------------+-------------------+-------------------+-------------------+--------------+
-; RGB_count.00      ; 0                 ; 0                 ; 0                 ; 0            ;
-; RGB_count.R_count ; 0                 ; 0                 ; 1                 ; 1            ;
-; RGB_count.B_count ; 0                 ; 1                 ; 0                 ; 1            ;
-; RGB_count.G_count ; 1                 ; 0                 ; 0                 ; 1            ;
-+-------------------+-------------------+-------------------+-------------------+--------------+
-
-
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; FSM:fsm|estado~4                      ; Lost fanout                            ;
-; FSM:fsm|estado~6                      ; Lost fanout                            ;
-; Temporizador:timer|RGB_count~6        ; Lost fanout                            ;
-; Temporizador:timer|RGB_count~7        ; Lost fanout                            ;
-; FSM:fsm|estado.000                    ; Lost fanout                            ;
-; FSM:fsm|estado.espera                 ; Lost fanout                            ;
-; FSM:fsm|estado.carga_R                ; Stuck at GND due to stuck port data_in ;
-; FSM:fsm|estado.carga_Y                ; Stuck at GND due to stuck port data_in ;
-; FSM:fsm|estado.carga_B                ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 9 ;                                        ;
-+---------------------------------------+----------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                         ;
-+------------------------+---------------------------+------------------------------------------------+
-; Register name          ; Reason for Removal        ; Registers Removed due to This Register         ;
-+------------------------+---------------------------+------------------------------------------------+
-; FSM:fsm|estado.carga_R ; Stuck at GND              ; FSM:fsm|estado.carga_Y, FSM:fsm|estado.carga_B ;
-;                        ; due to stuck port data_in ;                                                ;
-+------------------------+---------------------------+------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -292,51 +223,24 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 122   ;
-; Number of registers using Synchronous Clear  ; 84    ;
+; Total registers                              ; 66    ;
+; Number of registers using Synchronous Clear  ; 56    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 18    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 22    ;
+; Number of registers using Clock Enable       ; 5     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; Memoria_RGB:memoria_RGB|u[4]           ; 3       ;
-; Memoria_RGB:memoria_RGB|c[4]           ; 4       ;
-; Memoria_RGB:memoria_RGB|d[4]           ; 11      ;
-; Total number of inverted registers = 3 ;         ;
-+----------------------------------------+---------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |Top|Memoria_RGB:memoria_RGB|sel[1] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Top|Memoria_RGB:memoria_RGB|c[3]   ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |Top|Memoria_RGB:memoria_RGB|d[3]   ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 4 LEs                ; 12 LEs                 ; Yes        ; |Top|Temporizador:timer|contador[1] ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |Top|Drv_display:display|Mux4       ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Top|Temporizador:timer|Selector3   ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |Top|Temporizador:timer|Selector0   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Clock_Divider:Clk_400ms ;
-+----------------+----------+------------------------------------------+
-; Parameter Name ; Value    ; Type                                     ;
-+----------------+----------+------------------------------------------+
-; DIVISOR        ; 20000000 ; Signed Integer                           ;
-+----------------+----------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |Top|Driver_teclado:teclado|digito[1] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |Top|Drv_display:display|Mux1         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
 
 
 +---------------------------------------------------------------------+
@@ -376,46 +280,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Temporizador:timer ;
-+----------------+-------+----------------------------------------+
-; Parameter Name ; Value ; Type                                   ;
-+----------------+-------+----------------------------------------+
-; r              ; 10    ; Unsigned Binary                        ;
-; g              ; 01    ; Unsigned Binary                        ;
-; b              ; 00    ; Unsigned Binary                        ;
-; start          ; 00    ; Unsigned Binary                        ;
-; R_count        ; 01    ; Unsigned Binary                        ;
-; G_count        ; 11    ; Unsigned Binary                        ;
-; B_count        ; 10    ; Unsigned Binary                        ;
-+----------------+-------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------+
-; Parameter Settings for User Entity Instance: FSM:fsm ;
-+----------------+-------+-----------------------------+
-; Parameter Name ; Value ; Type                        ;
-+----------------+-------+-----------------------------+
-; r              ; 10    ; Unsigned Binary             ;
-; g              ; 01    ; Unsigned Binary             ;
-; b              ; 00    ; Unsigned Binary             ;
-; lectura        ; 000   ; Unsigned Binary             ;
-; espera         ; 001   ; Unsigned Binary             ;
-; carga_R        ; 011   ; Unsigned Binary             ;
-; carga_Y        ; 100   ; Unsigned Binary             ;
-; carga_B        ; 101   ; Unsigned Binary             ;
-+----------------+-------+-----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "FSM:fsm"                                                                                                 ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; est  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+
+; Port Connectivity Checks: "Drv_display:display" ;
++---------+-------+----------+--------------------+
+; Port    ; Type  ; Severity ; Details            ;
++---------+-------+----------+--------------------+
+; d       ; Input ; Info     ; Stuck at GND       ;
+; u[3..0] ; Input ; Info     ; Stuck at VCC       ;
+; u[4]    ; Input ; Info     ; Stuck at GND       ;
++---------+-------+----------+--------------------+
 
 
 +-------------------------------+
@@ -433,7 +306,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Feb 23 11:34:09 2021
+    Info: Processing started: Fri Mar 05 15:32:23 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Dosificador-Tintometrico -c Dosificador-Tintometrico
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file top.v
@@ -455,41 +328,29 @@ Info (12021): Found 1 design units, including 1 entities, in source file tempori
 Info (12021): Found 1 design units, including 1 entities, in source file filtro_rebote.v
     Info (12023): Found entity 1: Filtro_Rebote
 Info (12127): Elaborating entity "Top" for the top level hierarchy
-Info (12128): Elaborating entity "Clock_Divider" for hierarchy "Clock_Divider:Clk_400ms"
 Info (12128): Elaborating entity "Clock_Divider" for hierarchy "Clock_Divider:Clk_20ms"
 Info (12128): Elaborating entity "Clock_Divider" for hierarchy "Clock_Divider:Clk_2ms"
 Info (12128): Elaborating entity "Driver_teclado" for hierarchy "Driver_teclado:teclado"
-Info (10264): Verilog HDL Case Statement information at Driver_teclado.v(39): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at Driver_teclado.v(38): all case item expressions in this case statement are onehot
 Info (10264): Verilog HDL Case Statement information at Driver_teclado.v(48): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at Driver_teclado.v(57): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at Driver_teclado.v(66): all case item expressions in this case statement are onehot
-Info (10264): Verilog HDL Case Statement information at Driver_teclado.v(37): all case item expressions in this case statement are onehot
-Info (12128): Elaborating entity "Memoria_RGB" for hierarchy "Memoria_RGB:memoria_RGB"
-Info (12128): Elaborating entity "Temporizador" for hierarchy "Temporizador:timer"
+Info (10264): Verilog HDL Case Statement information at Driver_teclado.v(58): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at Driver_teclado.v(68): all case item expressions in this case statement are onehot
 Info (12128): Elaborating entity "Drv_display" for hierarchy "Drv_display:display"
 Info (12128): Elaborating entity "BCD_7segmentos" for hierarchy "Drv_display:display|BCD_7segmentos:Decoder"
-Info (12128): Elaborating entity "FSM" for hierarchy "FSM:fsm"
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Motores[0]" is stuck at GND
-    Warning (13410): Pin "Motores[1]" is stuck at GND
-    Warning (13410): Pin "Motores[2]" is stuck at GND
-Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/output_files/Dosificador-Tintometrico.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "enter"
     Warning (15610): No output dependent on input pin "reset"
-Info (21057): Implemented 273 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 161 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 249 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 139 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 4597 megabytes
-    Info: Processing ended: Tue Feb 23 11:34:11 2021
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Fri Mar 05 15:32:24 2021
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

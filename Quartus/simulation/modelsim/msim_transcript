@@ -22,12 +22,6 @@
 # 
 # Top level modules:
 # 	BCD_7segmentos
-# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Clock_Divider.v}
-# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Clock_Divider
-# 
-# Top level modules:
-# 	Clock_Divider
 # vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Drv_display.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
 # -- Compiling module Drv_display
@@ -59,36 +53,34 @@
 # Top level modules:
 # 	Temporizador
 # 
-# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v}
+# vlog -vlog01compat -work work +incdir+C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim {C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v}
 # Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
-# -- Compiling module Top_tb
+# -- Compiling module Drv_display_tb
 # 
 # Top level modules:
-# 	Top_tb
+# 	Drv_display_tb
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  Top_tb
-# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps Top_tb 
-# Loading work.Top_tb
-# Loading work.Top
-# Loading work.Clock_Divider
-# Loading work.Driver_teclado
-# Loading work.Memoria_RGB
-# Loading work.Temporizador
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  Drv_display_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps Drv_display_tb 
+# Loading work.Drv_display_tb
 # Loading work.Drv_display
 # Loading work.BCD_7segmentos
-# Loading work.FSM
-# ** Warning: (vsim-3017) C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Top.v(36): [TFMPC] - Too few port connections. Expected 7, found 6.
-# 
-#         Region: /Top_tb/DUT/fsm
-# ** Warning: (vsim-3722) C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/Top.v(36): [TFMPC] - Missing connection for port 'est'.
-# 
 # 
 # add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: User  Hostname: PC-FACU  ProcessID: 9996
+# 
+#           Attempting to use alternate WLF file "./wlftdt98f5".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftdt98f5
+# 
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# Break in Module Top_tb at C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v line 54
-# Simulation Breakpoint: Break in Module Top_tb at C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Top_tb.v line 54
-# MACRO ./Dosificador-Tintometrico_run_msim_rtl_verilog.do PAUSED at line 24
+# Break in Module Drv_display_tb at C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v line 60
+# Simulation Breakpoint: Break in Module Drv_display_tb at C:/Users/User/Desktop/Proyecto-Final-TD1/Quartus/simulation/modelsim/Drv_display_tb.v line 60
+# MACRO ./Dosificador-Tintometrico_run_msim_rtl_verilog.do PAUSED at line 23
