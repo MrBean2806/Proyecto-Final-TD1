@@ -1,0 +1,165 @@
+|Top
+clk => clk.IN2
+enter => ~NO_FANOUT~
+reset => ~NO_FANOUT~
+fila[0] => fila[0].IN1
+fila[1] => fila[1].IN1
+fila[2] => fila[2].IN1
+fila[3] => fila[3].IN1
+col[0] <= Driver_teclado:teclado.col
+col[1] <= Driver_teclado:teclado.col
+col[2] <= Driver_teclado:teclado.col
+col[3] <= Driver_teclado:teclado.col
+segmentos[0] <= Drv_display:display.segmentos
+segmentos[1] <= Drv_display:display.segmentos
+segmentos[2] <= Drv_display:display.segmentos
+segmentos[3] <= Drv_display:display.segmentos
+segmentos[4] <= Drv_display:display.segmentos
+segmentos[5] <= Drv_display:display.segmentos
+segmentos[6] <= Drv_display:display.segmentos
+enable[0] <= Drv_display:display.enable
+enable[1] <= Drv_display:display.enable
+enable[2] <= Drv_display:display.enable
+cambio <= Driver_teclado:teclado.cambio_digito
+dig[0] <= digito[0].DB_MAX_OUTPUT_PORT_TYPE
+dig[1] <= digito[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|Clock_Divider:Clk_2ms
+clock_in => contador[0].CLK
+clock_in => contador[1].CLK
+clock_in => contador[2].CLK
+clock_in => contador[3].CLK
+clock_in => contador[4].CLK
+clock_in => contador[5].CLK
+clock_in => contador[6].CLK
+clock_in => contador[7].CLK
+clock_in => contador[8].CLK
+clock_in => contador[9].CLK
+clock_in => contador[10].CLK
+clock_in => contador[11].CLK
+clock_in => contador[12].CLK
+clock_in => contador[13].CLK
+clock_in => contador[14].CLK
+clock_in => contador[15].CLK
+clock_in => contador[16].CLK
+clock_in => contador[17].CLK
+clock_in => contador[18].CLK
+clock_in => contador[19].CLK
+clock_in => contador[20].CLK
+clock_in => contador[21].CLK
+clock_in => contador[22].CLK
+clock_in => contador[23].CLK
+clock_in => contador[24].CLK
+clock_in => contador[25].CLK
+clock_in => contador[26].CLK
+clock_in => contador[27].CLK
+clock_out <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|Clock_Divider:Clk_5ms
+clock_in => contador[0].CLK
+clock_in => contador[1].CLK
+clock_in => contador[2].CLK
+clock_in => contador[3].CLK
+clock_in => contador[4].CLK
+clock_in => contador[5].CLK
+clock_in => contador[6].CLK
+clock_in => contador[7].CLK
+clock_in => contador[8].CLK
+clock_in => contador[9].CLK
+clock_in => contador[10].CLK
+clock_in => contador[11].CLK
+clock_in => contador[12].CLK
+clock_in => contador[13].CLK
+clock_in => contador[14].CLK
+clock_in => contador[15].CLK
+clock_in => contador[16].CLK
+clock_in => contador[17].CLK
+clock_in => contador[18].CLK
+clock_in => contador[19].CLK
+clock_in => contador[20].CLK
+clock_in => contador[21].CLK
+clock_in => contador[22].CLK
+clock_in => contador[23].CLK
+clock_in => contador[24].CLK
+clock_in => contador[25].CLK
+clock_in => contador[26].CLK
+clock_in => contador[27].CLK
+clock_out <= LessThan1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|Driver_teclado:teclado
+clk => cambio_digito~reg0.CLK
+clk => digito[0]~reg0.CLK
+clk => digito[1]~reg0.CLK
+clk => digito[2]~reg0.CLK
+clk => digito[3]~reg0.CLK
+clk => digito[4]~reg0.CLK
+clk => estado[0].CLK
+clk => estado[1].CLK
+fila[0] => Decoder0.IN3
+fila[0] => Equal0.IN3
+fila[1] => Decoder0.IN2
+fila[1] => Equal0.IN2
+fila[2] => Decoder0.IN1
+fila[2] => Equal0.IN1
+fila[3] => Decoder0.IN0
+fila[3] => Equal0.IN0
+col[0] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+col[1] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+col[2] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+col[3] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+digito[0] <= digito[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+digito[1] <= digito[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+digito[2] <= digito[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+digito[3] <= digito[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+digito[4] <= digito[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cambio_digito <= cambio_digito~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Top|Drv_display:display
+clk => estado[0].CLK
+clk => estado[1].CLK
+u[0] => Mux4.IN1
+u[1] => Mux3.IN1
+u[2] => Mux2.IN1
+u[3] => Mux1.IN1
+u[4] => Mux0.IN1
+d[0] => Mux4.IN2
+d[1] => Mux3.IN2
+d[2] => Mux2.IN2
+d[3] => Mux1.IN2
+d[4] => Mux0.IN2
+c[0] => Mux4.IN3
+c[1] => Mux3.IN3
+c[2] => Mux2.IN3
+c[3] => Mux1.IN3
+c[4] => Mux0.IN3
+enable[0] <= estado[1].DB_MAX_OUTPUT_PORT_TYPE
+enable[1] <= estado[0].DB_MAX_OUTPUT_PORT_TYPE
+enable[2] <= enable.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[0] <= Hex_7segmentos:Decoder.segmentos
+segmentos[1] <= Hex_7segmentos:Decoder.segmentos
+segmentos[2] <= Hex_7segmentos:Decoder.segmentos
+segmentos[3] <= Hex_7segmentos:Decoder.segmentos
+segmentos[4] <= Hex_7segmentos:Decoder.segmentos
+segmentos[5] <= Hex_7segmentos:Decoder.segmentos
+segmentos[6] <= Hex_7segmentos:Decoder.segmentos
+
+
+|Top|Drv_display:display|Hex_7segmentos:Decoder
+hex[0] => Decoder0.IN4
+hex[1] => Decoder0.IN3
+hex[2] => Decoder0.IN2
+hex[3] => Decoder0.IN1
+hex[4] => Decoder0.IN0
+segmentos[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+segmentos[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+

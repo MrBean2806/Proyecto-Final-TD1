@@ -1,0 +1,11 @@
+module Top (
+	input clk,reset,enter,
+	input [3:0] fil,
+	output [3:0] col,
+	output [6:0] segmentos,
+	output [2:0] enable, motores
+);
+
+
+
+endmodule
