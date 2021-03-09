@@ -1,5 +1,5 @@
 Assembler report for DosificadoTintometrico
-Mon Mar 08 15:55:15 2021
+Tue Mar 09 18:07:45 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,8 +10,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/facun/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.sof
-  6. Assembler Device Options: C:/Users/facun/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.pof
+  5. Assembler Device Options: C:/Users/User/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.sof
+  6. Assembler Device Options: C:/Users/User/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.pof
   7. Assembler Messages
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Mar 08 15:55:15 2021 ;
+; Assembler Status      ; Successful - Tue Mar 09 18:07:45 2021 ;
 ; Revision Name         ; DosificadoTintometrico                ;
 ; Top-level Entity Name ; Top                                   ;
 ; Family                ; Cyclone II                            ;
@@ -78,37 +78,37 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                               ;
-+-----------------------------------------------------------------------------------------+
-; File Name                                                                               ;
-+-----------------------------------------------------------------------------------------+
-; C:/Users/facun/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.sof ;
-; C:/Users/facun/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.pof ;
-+-----------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                              ;
++----------------------------------------------------------------------------------------+
+; File Name                                                                              ;
++----------------------------------------------------------------------------------------+
+; C:/Users/User/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.sof ;
+; C:/Users/User/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.pof ;
++----------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/facun/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.sof ;
-+----------------+--------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                          ;
-+----------------+--------------------------------------------------------------------------------------------------+
-; Device         ; EP2C5T144C8                                                                                      ;
-; JTAG usercode  ; 0x00087383                                                                                       ;
-; Checksum       ; 0x00087383                                                                                       ;
-+----------------+--------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/User/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.sof ;
++----------------+-------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                         ;
++----------------+-------------------------------------------------------------------------------------------------+
+; Device         ; EP2C5T144C8                                                                                     ;
+; JTAG usercode  ; 0x00099B2F                                                                                      ;
+; Checksum       ; 0x00099B2F                                                                                      ;
++----------------+-------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/facun/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.pof ;
-+--------------------+----------------------------------------------------------------------------------------------+
-; Option             ; Setting                                                                                      ;
-+--------------------+----------------------------------------------------------------------------------------------+
-; Device             ; EPCS4                                                                                        ;
-; JTAG usercode      ; 0x00000000                                                                                   ;
-; Checksum           ; 0x074FA4D5                                                                                   ;
-; Compression Ratio  ; 3                                                                                            ;
-+--------------------+----------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/User/Desktop/Proyecto-Final-TD1/Final/output_files/DosificadoTintometrico.pof ;
++--------------------+---------------------------------------------------------------------------------------------+
+; Option             ; Setting                                                                                     ;
++--------------------+---------------------------------------------------------------------------------------------+
+; Device             ; EPCS4                                                                                       ;
+; JTAG usercode      ; 0x00000000                                                                                  ;
+; Checksum           ; 0x074E7DCF                                                                                  ;
+; Compression Ratio  ; 3                                                                                           ;
++--------------------+---------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Mar 08 15:55:13 2021
+    Info: Processing started: Tue Mar 09 18:07:44 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DosificadoTintometrico -c DosificadoTintometrico
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4544 megabytes
-    Info: Processing ended: Mon Mar 08 15:55:15 2021
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 4547 megabytes
+    Info: Processing ended: Tue Mar 09 18:07:45 2021
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

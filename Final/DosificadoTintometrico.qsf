@@ -55,20 +55,19 @@ set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
-set_location_assignment PIN_3 -to cambio
 set_location_assignment PIN_17 -to clk
-set_location_assignment PIN_121 -to col[3]
-set_location_assignment PIN_125 -to col[2]
-set_location_assignment PIN_129 -to col[1]
-set_location_assignment PIN_133 -to col[0]
+set_location_assignment PIN_143 -to col[3]
+set_location_assignment PIN_141 -to col[2]
+set_location_assignment PIN_137 -to col[1]
+set_location_assignment PIN_135 -to col[0]
 set_location_assignment PIN_142 -to enable[2]
 set_location_assignment PIN_139 -to enable[1]
 set_location_assignment PIN_136 -to enable[0]
-set_location_assignment PIN_40 -to enter
-set_location_assignment PIN_135 -to fila[3]
-set_location_assignment PIN_137 -to fila[2]
-set_location_assignment PIN_141 -to fila[1]
-set_location_assignment PIN_143 -to fila[0]
+set_location_assignment PIN_134 -to enter
+set_location_assignment PIN_133 -to fila[3]
+set_location_assignment PIN_129 -to fila[2]
+set_location_assignment PIN_125 -to fila[1]
+set_location_assignment PIN_121 -to fila[0]
 set_location_assignment PIN_41 -to reset
 set_location_assignment PIN_112 -to segmentos[6]
 set_location_assignment PIN_114 -to segmentos[5]
@@ -83,4 +82,14 @@ set_global_assignment -name CDF_FILE output_files/Chain15.cdf
 set_global_assignment -name CDF_FILE output_files/Chain21.cdf
 set_global_assignment -name CDF_FILE Chain22.cdf
 set_global_assignment -name CDF_FILE output_files/Chain27.cdf
+set_global_assignment -name VERILOG_FILE Memoria_RGB.v
+set_location_assignment PIN_9 -to leds[2]
+set_location_assignment PIN_3 -to leds[0]
+set_location_assignment PIN_7 -to leds[1]
+set_global_assignment -name VERILOG_FILE Filtro_Rebote.v
+set_global_assignment -name VERILOG_FILE Temporizador.v
+set_global_assignment -name VERILOG_FILE FSM.v
+set_location_assignment PIN_73 -to motores[2]
+set_location_assignment PIN_75 -to motores[1]
+set_location_assignment PIN_79 -to motores[0]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

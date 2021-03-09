@@ -2,7 +2,7 @@
 
 module Hex_7segmentos(
 	input [4:0] hex,
-	output reg [6:0] segmentos //MSB = a  ; LSB = g
+	output reg [6:0] segmentos = 7'd0 //MSB = a  ; LSB = g
 );
 
 always@(hex)	begin

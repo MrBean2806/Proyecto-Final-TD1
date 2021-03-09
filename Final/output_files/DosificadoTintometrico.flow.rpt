@@ -1,5 +1,5 @@
 Flow report for DosificadoTintometrico
-Mon Mar 08 15:55:18 2021
+Tue Mar 09 18:07:47 2021
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,18 +40,18 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Mon Mar 08 15:55:15 2021           ;
+; Flow Status                        ; Successful - Tue Mar 09 18:07:45 2021           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DosificadoTintometrico                          ;
 ; Top-level Entity Name              ; Top                                             ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C5T144C8                                     ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 130 / 4,608 ( 3 % )                             ;
-;     Total combinational functions  ; 128 / 4,608 ( 3 % )                             ;
-;     Dedicated logic registers      ; 66 / 4,608 ( 1 % )                              ;
-; Total registers                    ; 66                                              ;
-; Total pins                         ; 24 / 89 ( 27 % )                                ;
+; Total logic elements               ; 251 / 4,608 ( 5 % )                             ;
+;     Total combinational functions  ; 248 / 4,608 ( 5 % )                             ;
+;     Dedicated logic registers      ; 131 / 4,608 ( 3 % )                             ;
+; Total registers                    ; 131                                             ;
+; Total pins                         ; 27 / 89 ( 30 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 119,808 ( 0 % )                             ;
 ; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                                  ;
@@ -64,26 +64,26 @@ applicable agreement for further details.
 +-------------------+------------------------+
 ; Option            ; Setting                ;
 +-------------------+------------------------+
-; Start date & time ; 03/08/2021 15:55:03    ;
+; Start date & time ; 03/09/2021 18:07:39    ;
 ; Main task         ; Compilation            ;
 ; Revision Name     ; DosificadoTintometrico ;
 +-------------------+------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+-------------------------------+------------------------+-------------+------------+
-; Assignment Name                     ; Value                         ; Default Value          ; Entity Name ; Section Id ;
-+-------------------------------------+-------------------------------+------------------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 4459195884143.161522970221672 ; --                     ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                            ; --                     ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                             ; --                     ; --          ; --         ;
-; PARTITION_COLOR                     ; 16764057                      ; --                     ; Top         ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING         ; --                     ; Top         ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                        ; --                     ; Top         ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                  ; --                     ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; Top                           ; DosificadoTintometrico ; --          ; --         ;
-+-------------------------------------+-------------------------------+------------------------+-------------+------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                       ;
++-------------------------------------+------------------------------+------------------------+-------------+------------+
+; Assignment Name                     ; Value                        ; Default Value          ; Entity Name ; Section Id ;
++-------------------------------------+------------------------------+------------------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 929348529712.161532405800920 ; --                     ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                           ; --                     ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                            ; --                     ; --          ; --         ;
+; PARTITION_COLOR                     ; 16764057                     ; --                     ; Top         ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING        ; --                     ; Top         ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                       ; --                     ; Top         ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                 ; --                     ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; Top                          ; DosificadoTintometrico ; --          ; --         ;
++-------------------------------------+------------------------------+------------------------+-------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -91,11 +91,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4586 MB             ; 00:00:03                           ;
-; Fitter                    ; 00:00:05     ; 1.0                     ; 4810 MB             ; 00:00:05                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4544 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4543 MB             ; 00:00:02                           ;
-; Total                     ; 00:00:13     ; --                      ; --                  ; 00:00:12                           ;
+; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4587 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:03     ; 1.0                     ; 4794 MB             ; 00:00:03                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4547 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4545 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:06     ; --                      ; --                  ; 00:00:06                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -104,10 +104,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; Facu-Notebook    ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; Facu-Notebook    ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; Facu-Notebook    ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; Facu-Notebook    ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; PC-Facu          ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; PC-Facu          ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; PC-Facu          ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; PC-Facu          ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

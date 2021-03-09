@@ -1,2 +1,2 @@
-Info (10281): Verilog HDL Declaration information at Top.v(15): object "clk_2ms" differs only in case from object "Clk_2ms" in the same scope
-Info (10281): Verilog HDL Declaration information at Top.v(14): object "clk_5ms" differs only in case from object "Clk_5ms" in the same scope
+Info (10281): Verilog HDL Declaration information at Top.v(13): object "clk_1ms" differs only in case from object "Clk_1ms" in the same scope
+Info (10281): Verilog HDL Declaration information at Top.v(13): object "clk_2ms" differs only in case from object "Clk_2ms" in the same scope

@@ -1,14 +1,14 @@
 module Driver_teclado(
 	input clk,		//clk de 100Hz
-	input [3:0] fila,
-	output reg[3:0] col,
+	input [3:0] col,
+	output reg[3:0] fila,
 	output reg [4:0] digito = 5'd16,
 	output reg cambio_digito = 0
 );
 
  
 reg [4:0] aux = 5'd16;
-reg [1:0] estado = 2'd0;
+reg [1:0] estado,est, pulso = 2'd0;
 
 parameter fila_1 = 4'b0001, col_1 = 4'b0001,
 		  fila_2 = 4'b0010, col_2 = 4'b0010,
@@ -17,22 +17,28 @@ parameter fila_1 = 4'b0001, col_1 = 4'b0001,
 
 always @(posedge clk) begin
 	begin
-		if(estado >= 2'b11)
-			estado <= 2'd0;
-		else
-			estado <= estado + 2'd1;
+	estado <= estado + 2'd1;
 	end
 end
 
 always@(posedge clk) begin
-	//no hay teclas apretadas
-	if(fila == 4'b0000) begin
-		digito <= digito;
-		cambio_digito <= 1'd1;
+	if(col != 4'b0000) begin
+		digito <= aux;
+		est <= estado;
+		if(pulso == 2'd0) begin
+			cambio_digito <= 1'd1;
+			pulso <= 2'd1;
+		end
+		else begin
+			cambio_digito <= 1'd0;
+			pulso <= 2'd1;
+		end
 	end
 	else begin
-		digito <= aux;
+		digito <= digito;
 		cambio_digito <= 1'd0;
+		if(est == estado)
+			pulso <= 2'd0;
 	end
 end
 
@@ -40,42 +46,42 @@ end
 always @(*) begin
 	case(estado)
 		2'd0: begin
-					col<=col_1;
-					case(fila)
-						fila_1: aux <= 5'd1;
-						fila_2: aux <= 5'd4;
-						fila_3: aux <= 5'd7;
-						fila_4: aux <= 5'hF;
+					fila<=fila_1;
+					case(col)
+						col_1: aux <= 5'd1;
+						col_2: aux <= 5'd2;
+						col_3: aux <= 5'd3;
+						col_4: aux <= 5'hA;
 						default: aux <= 5'd16;
 					endcase
 				 end
 		2'd1: begin
-					col<=col_2;
-					case(fila)
-						fila_1: aux <= 5'd2;
-						fila_2: aux <= 5'd5;
-						fila_3: aux <= 5'd8;
-						fila_4: aux <= 5'd0;
+					fila<=fila_2;
+					case(col)
+						col_1: aux <= 5'd4;
+						col_2: aux <= 5'd5;
+						col_3: aux <= 5'd6;
+						col_4: aux <= 5'hB;
 						default: aux <= 5'd16;
 					endcase
 				 end
 		2'd2: begin
-					col<=col_3;
-					case(fila)
-						fila_1: aux <= 5'd3;
-						fila_2: aux <= 5'd6;
-						fila_3: aux <= 5'd9;
-						fila_4: aux <= 5'hE;
+					fila<=fila_3;
+					case(col)
+						col_1: aux <= 5'd7;
+						col_2: aux <= 5'd8;
+						col_3: aux <= 5'd9;
+						col_4: aux <= 5'hC;
 						default: aux <= 5'd16;
 					endcase
 				 end
 		2'd3: begin
-					col<=col_4;
-					case(fila)
-						fila_1: aux <= 5'hA;
-						fila_2: aux <= 5'hB;
-						fila_3: aux <= 5'hC;
-						fila_4: aux <= 5'hD;
+					fila<=fila_4;
+					case(col)
+						col_1: aux <= 5'hF;
+						col_2: aux <= 5'd0;
+						col_3: aux <= 5'hE;
+						col_4: aux <= 5'hD;
 						default: aux <= 5'd16;
 					endcase
 				 end
